@@ -1,1078 +1,533 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neil Martinez — Media Buyer &amp; Marketing VA</title>
+  <meta name="description" content="Neil Martinez — performance-driven Meta Ads media buyer &amp; marketing VA. I build profitable ad systems and accelerate creative &amp; landing pages with AI. 2.98x ROAS · 31K purchases · 188M impressions." />
+  <meta name="author" content="Neil Angelo Martinez" />
 
-  <!--
-    - primary meta tags
-  -->
-  <title>Neil Martinez - Data Analyst</title>
-  <meta name="title" content="Neil Martinez - Data Analyst">
-  <meta name="description" content="This is a personal portfolio">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Neil Martinez — Media Buyer &amp; Marketing VA" />
+  <meta property="og:description" content="Meta Ads media buyer who turns ad spend into profit — accelerated by AI creative &amp; landing pages." />
+  <meta property="og:url" content="https://neilangelomartinez.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!--
-    - favicon
-  -->
-  <link href="./assets/images/favicon.png" rel="icon">
-  <link href="./assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Favicon: red dot on the void (Nothing motif) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23d71921'/%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png" />
 
+  <!-- Fonts: Space Grotesk · Space Mono · Doto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - preload images
-  -->
-  <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">
-  <!--
-    - grid style for portfolio
-  -->
-
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
+<!-- =====================================================================
+     ASSET SWAP GUIDE (placeholders → real work, no layout changes)
+     · AI ad creatives .......  replace <div class="adunit__creative"> inner
+                                placeholder with <img src="./assets/images/..">
+     · Landing page preview ..  replace <div class="browser__view"> inner
+                                placeholder with a screenshot <img> and set the
+                                real URL on the "VIEW LIVE" link (data-live).
+     · Ad account screenshots   drop into a case study's .terminal (swap the
+                                <table> for an <img> in a .browser frame).
+     All figures below are Neil's real reported numbers.
+     ===================================================================== -->
 
-  <!--
-    - #PRELOADER
-  -->
+  <!-- ============================ NAV ============================ -->
+  <header class="nav" id="top">
+    <a class="nav__brand" href="#top">NEIL<b>.</b>MARTINEZ</a>
 
-  <div class="preloader" data-preloader>
-    <div class="circle"></div>
-  </div>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#ai">AI Workflow</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-
-  <!--
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <a>
-
-      </a>
-
-      <button class="nav-toggle-btn" data-nav-toggler data-nav-toggle-btn aria-label="Toggle menu">
-        <span class="line line-1"></span>
-        <span class="line line-2"></span>
+    <div class="nav__tools">
+      <span class="status-pill"><span class="dot"></span>Available for work</span>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
+        <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
       </button>
-
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#" class="navbar-link">Home</a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link">About</a>
-          </li>     
-
-          <li>
-            <a href="#portfolio" class="navbar-link">Portfolio</a>
-          </li>
-
-          <li>
-            <a href="#blog" class="navbar-link">Blog</a>
-          </li>
-
-          <li>
-            <a href="#contact" class="navbar-link">Contact</a>
-          </li>
-
-        </ul>
-      </nav>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-
+      <button class="nav__burger" data-burger aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
   </header>
 
   <main>
-    <article>
-
-      <!--
-        - #HERO
-      -->
-
-      <section class="section hero" aria-label="home">
-        <div class="container">
-
-          <div class="hero-content">
-
-            <h1 class="h1 hero-title">Neil Martinez</h1>
-            <p class="hero-subtitle">
-              Data Analyst
-            </p>
-            <div class="hero-banner">
-              <img src="./assets/images/hero-banner.jpg" width="800" height="800" alt="neil angelo martinez" class="w-100">
-            </div>
-
-            <p class="section-text">
-              Hi, I'm Neil Angelo Martinez, an aspiring data analyst with a strong desire to learn and grow, I am excited to bring my passion and dedication to the field. 
-              I am currently enrolled in Refocus, the top data analytics bootcamp in the Philippines, where I have gained a solid foundation in tools such as Excel, SQL, Power BI, and Python.
-              In addition to my formal education, I have also taken the initiative to continue learning and developing my skills through online courses and virtual internships. 
-              I am confident that my strong foundation and eagerness to learn will enable me to excel as a data analyst and make valuable contributions to any organization.
-            </p>
-
-            <a href="https://drive.google.com/file/d/12D-ea9IYrqjMRQL-lxszCpNTBvrejV8t/view?usp=sharing" target="_blank" class="btn has-before">
-              <span class="span">Download CV</span>
-
-              <ion-icon name="download-outline" aria-hidden="true"></ion-icon>
-            </a>
-
-          </div>
-
+    <!-- ============================ HERO ============================ -->
+    <section class="hero">
+      <div class="dotgrid"></div>
+      <div class="wrap hero__inner">
+        <p class="hero__role">
+          MEDIA BUYER <span class="sep">/</span> MARKETING VA <span class="sep">/</span> <span>+ AI CREATIVE</span>
+        </p>
+        <h1>Meta ad systems that turn spend into <span class="amp">profit.</span></h1>
+        <p class="hero__sub">
+          I'm Neil — a performance-driven Meta Ads media buyer &amp; marketing VA with 2 years running
+          profitable paid social for eCommerce, service, and tech brands across the US and PH. Grounded in data,
+          fueled by creative testing, and accelerated with AI — from ad images to full landing pages.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="mailto:neilangelomartinez@gmail.com">Email me <span class="arw">↗</span></a>
+          <a class="btn" href="https://drive.google.com/file/d/1ukwgBs5nPKJeJg_sbQviEwwuu7FX-N4s/view?usp=sharing" target="_blank" rel="noopener">View résumé <span class="arw">↗</span></a>
         </div>
-      </section>
 
-        <!--
-        - #SKILLS
-      -->
-
-      <section class="section skills" aria-label="our skills">
-        <div id="about" class="container">
-
-          <p class="section-subtitle">Data-Driven and Dedicated</p>
-
-          <h2 class="h2 section-title">Aspiring Data Analyst Ready to Make an Impact</h2>
-
-          <div class="skills-wrapper">
-
-            <div>
-              <p class="section-text">
-                My name is Neil Angelo Martinez and I am an aspiring data analyst. As an aspiring data analyst with a strong desire to learn and grow, I am excited to bring my passion and dedication to the field. 
-                I want to share my story in discovering data analytics, October 27, 2022 I received a call from a marketing agent about the opportunity to become a data analyst. 
-                Recognizing the potential for a fulfilling and exciting career in this field, I immediately enrolled in Refocus to fast track my education and training in data analytics. 
-                I was excited to have this opportunity and was committed to making the most of it. 
-              </p>
-
-              <p class="section-text">
-                Through my studies at Refocus , I gained a strong foundation in the tools and techniques used in the field, as well as the practical experience needed to succeed as a data analyst. 
-                I also participated in a group project assignment where our data analytics skills and presentation skills were tested. 
-                While enrolled in Refocus, I also took some online virtual trainings like Data Analytics and Visualization from Accenture North America, Power BI in Data Analytics by PwC Switzerland,
-                and Career essentials in Data analysis by Microsoft and LinkedIn and completed online certifications like Google Data Analytics, IT Automation with Python, and Microsoft Power Platforms.
-              </p>
-
-              <a href="https://bit.ly/neilmartinez-linkedin" class="btn has-before">LinkedIn Profile</a>
-            </div>
-
-            <div>
-
-              <ul class="skills-list">
-
-                <li>
-                  <div class="progress-wrapper">
-                    <p class="progress-label">SQL</p>
-
-                    <data class="progress-value" value="90">90%</data>
-                  </div>
-
-                  <div class="progress-bg">
-                    <div class="progress" style="width: 90%;"></div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="progress-wrapper">
-                    <p class="progress-label">Power BI</p>
-
-                    <data class="progress-value" value="95">95%</data>
-                  </div>
-
-                  <div class="progress-bg">
-                    <div class="progress" style="width: 95%;"></div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="progress-wrapper">
-                    <p class="progress-label">Python</p>
-
-                    <data class="progress-value" value="70">70%</data>
-                  </div>
-
-                  <div class="progress-bg">
-                    <div class="progress" style="width: 70%;"></div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="progress-wrapper">
-                    <p class="progress-label">Excel</p>
-
-                    <data class="progress-value" value="95">95%</data>
-                  </div>
-
-                  <div class="progress-bg">
-                    <div class="progress" style="width: 95%;"></div>
-                  </div>
-                </li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
+        <div class="hero__figure">
+          <div class="hero__bignum"><span data-to="2.98" data-decimals="2">0.00</span>x</div>
+          <p class="hero__bignum-cap">Purchase ROAS on my own brand — ₱1.8M in revenue from ₱633K spend, at a 60% profit margin.</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- 
-        - #PORTFOLIO
-      -->
+    <!-- ============================ PROOF BAR ============================ -->
+    <section class="proof" aria-label="Key results">
+      <div class="proof__grid">
+        <div class="kpi">
+          <div class="kpi__num"><span data-to="27.9" data-decimals="1">0</span><span class="u">M</span></div>
+          <div class="kpi__label">Total reach</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi__num"><span data-to="188" data-decimals="0">0</span><span class="u">M</span></div>
+          <div class="kpi__label">Impressions</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi__num"><span data-to="31" data-decimals="0">0</span><span class="u">K</span></div>
+          <div class="kpi__label">Purchases driven</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi__num"><span data-to="4.13" data-decimals="2">0</span><span class="u">x</span></div>
+          <div class="kpi__label">Best campaign ROAS</div>
+        </div>
+      </div>
+    </section>
 
-      <section class="portfolio" aria-labelledby="portfolio-label">
-
-        <div id="portfolio" class="title-wrapper container">
-          
+    <!-- ============================ ABOUT ============================ -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="about__grid reveal">
           <div>
-            <p class="section-subtitle" id="portfolio-label">Data Analysis and Visualization</p>
-
-            <h2 class="h2 section-title">Portfolio</h2>
-          </div>
-
-          <p class="section-text">
-            Check out some of the case studies I made as a Data Analyst.
-          </p>
-
-        </div>
-
-        <div class="tabs">
-          <div class="tab selected" data-category="category1">Power BI</div>
-          <div class="tab" data-category="category2">Python</div>
-          <div class="tab" data-category="category3">SQL</div>
-          <div class="tab" data-category="category4">Excel</div>
-        </div>
-
-          <li class="image-grid">
-            <div class="portfolio-card img-holder" style="--width: 800; --height: 450;">
-
-              <img src="./assets/images/portfolio11.png" width="800" height="450" loading="lazy" alt="portfolio" data-category="category2" class="img-cover">
-
-              <div class="card-content">
-                <h3 class="h3 card-title">Store Sales - Time Series Forecasting</h3>
-
-                <p class="card-text">This is my submission for the Store Sales - Time Series Forecasting competition. 
-                  It's a really cool competition that challenges us to use time series forecasting techniques to predict sales for a bunch of stores over the next few months. Time series forecasting is a fancy way of saying that we get to use past data to try and predict what will happen in the future. 
-                  It's a useful skill to have because it helps organizations make smart decisions about the future.</p>
-              </div>
-
-              <a href="https://www.kaggle.com/code/neilangelomartinez/store-sales-time-series-forecasting#INTRODUCTION" target="_blank" class="layer-link"></a>
-
-            </div>
-          </li>
-
-          <li class="image-grid">
-            <div class="portfolio-card img-holder" style="--width: 800; --height: 450;">
-
-              <img src="./assets/images/portfolio10.png" width="800" height="450" loading="lazy" alt="portfolio" data-category="category2" class="img-cover">
-
-              <div class="card-content">
-                <h3 class="h3 card-title">Customer Mall Segmentation and Clustering using Python</h3>
-
-                <p class="card-text">The purpose of this project was to identify the most important customer groups for a marketing team to target using data analysis and machine learning approaches. 
-                  The project’s data comprised of information about mall clients, such as their age, gender, annual income, and spending score.</p>
-              </div>
-
-              <a href="https://medium.com/@neilangelomartinez/customer-mall-segmentation-and-clustering-using-python-8057449f307a" target="_blank" class="layer-link"></a>
-
-            </div>
-          </li>
-                    
-            <li class="image-grid">
-              <div class="portfolio-card img-holder" style="--width: 800; --height: 450;">
-
-                <img src="./assets/images/portfolio9.png" width="800" height="450" loading="lazy" alt="portfolio" data-category="category1" class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">NYPD Arrest Data 2022 (Q1-Q3)</h3>
-
-                  <p class="card-text">This study aims to analyze and recognize patterns and trends in New York City police enforcement activity as represented in statistics on arrests made by the NYPD. 
-                    The information comprises the type of crime, the location and date of enforcement, and perpetrator demographics. 
-                    By examining this data, it is intended to obtain insight into the nature of police activity in the city and how it may change depending on criteria.</p>
-                </div>
-
-                <a href="https://medium.com/@neilangelomartinez/nypd-arrest-data-d4fc3a0501cb" target="_blank" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="image-grid">
-              <div class="portfolio-card img-holder" style="--width: 800; --height: 450;">
-
-                <img src="./assets/images/portfolio8.png" width="800" height="450" loading="lazy" alt="portfolio" data-category="category1"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">PhoneNow Churn Analysis</h3>
-
-                  <p class="card-text">I created a dashboard to analyze customer churn in a telecommunications company. 
-                    The dashboard was designed to provide a comprehensive overview of churn rates and help the company identify potential areas for improvement.</p>
-                </div>
-
-                <a href="https://www.novypro.com/project/pwc-churn-analysis" target="_blank" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="image-grid">
-              <div class="portfolio-card img-holder" style="--width: 800; --height: 450;">
-
-                <img src="./assets/images/portfolio7.png" width="800" height="450" loading="lazy" alt="portfolio" data-category="category1"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Supermarket Sales Dashboard</h3>
-
-                  <p class="card-text">I created a supermarket sales dashboard in Power BI that offers a comprehensive and intuitive overview of the company's sales performance. 
-                    The dashboard features a range of interactive charts and graphs that provide valuable insights into key metrics such as sales revenue, profit margins, and customer types.</p>
-                </div>
-
-                <a href="https://medium.com/@neilangelomartinez/supermarket-sales-dashboard-6a24fc6222cb" target="_blank" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="image-grid">
-              <div class="portfolio-card img-holder" style="--width: 800; --height: 450;">
-
-                <img src="./assets/images/portfolio6.png" width="800" height="450" loading="lazy" alt="portfolio" data-category="category1"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Call Centre Trends: Visualising customer and agent behavior</h3>
-
-                  <p class="card-text">A Case Study from PwC Switzerland: Power BI Virtual Experience</p>
-                </div>
-
-                <a href="https://medium.com/@neilangelomartinez/call-centre-trends-visualising-customer-and-agent-behavior-778785d2eeb0" target="_blank" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="image-grid">
-              <div class="portfolio-card img-holder" style="--width: 800; --height: 450;">
-
-                <img src="./assets/images/portfolio5.png" width="800" height="450" loading="lazy" alt="portfolio" data-category="category1"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Data Analysis of an Indian Delivery Company</h3>
-
-                  <p class="card-text">Calculating business metrics</p>
-                </div>
-
-                <a href="https://medium.com/@neilangelomartinez/data-analysis-of-an-indian-delivery-company-23e6a099668c" target="_blank" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="image-grid">
-              <div class="portfolio-card img-holder" style="--width: 800; --height: 450;">
-
-                <img src="./assets/images/portfolio4.png" width="800" height="450" loading="lazy" alt="portfolio" data-category="category1"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Olist eCommerce Analysis</h3>
-
-                  <p class="card-text">The dataset for this study is from a Brazilian e-commerce company called Olist Store. It contains information on 100,000 orders made from 2016 to 2018 from various marketplaces in Brazil. 
-                    The dataset includes details such as the status of the order, the price and payment information, customer location, and product attributes.</p>
-                </div>
-
-                <a href="https://medium.com/@neilangelomartinez/olist-ecommerce-analysis-a3ad7a640128" target="_blank" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="image-grid">
-              <div class="portfolio-card img-holder" style="--width: 800; --height: 450;">
-
-                <img src="./assets/images/portfolio3.png" width="800" height="450" loading="lazy" alt="portfolio" data-category="category4"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Accenture Data Analytics Virtual Program</h3>
-
-                  <p class="card-text">This is the case study I made during the Accenture Data Analytics Virtual Program in partnership with Forage. The program is very intuitive and easy to follow.
-                    The goal of this case study is to help a small company: Social Buzz, in the analysis of their content categories that highlights the top 5 categories with the largest aggregate popularity.
-                    They want to learn data best practices from a large corporation. Due to the nature of their business, they have a massive amount of data so they are keen on.</p>
-                </div>
-
-                <a href="https://github.com/neilangelomartinez/Accenture-data-analytics-virtual-program" target="_blank" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="image-grid">
-              <div class="portfolio-card img-holder" style="--width: 800; --height: 450;">
-
-                <img src="./assets/images/portfolio2.png" width="800" height="450" loading="lazy" alt="portfolio" data-category="category3"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Ellevating Yellevate</h3>
-
-                  <p class="card-text">This is a group project assignment at Refocus Digital Academy.</p>
-                </div>
-
-                <a href="" target="_blank" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="image-grid">
-              <div class="portfolio-card img-holder" style="--width: 800; --height: 450;">
-
-                <img src="./assets/images/portfolio1.png" width="800" height="450" loading="lazy" alt="portfolio" data-category="category3"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Cyclistic Bike Sharing</h3>
-
-                  <p class="card-text">This is the capstone project I did in completing the Google Data Analytics certficate. Cyclistic is a fictitious Chicago bike-share corporation. The marketing director believes that increasing the number of yearly subscriptions is critical to the company's future success.</p>
-                </div>
-
-                <a href="https://medium.com/@neilangelomartinez/cyclistic-bike-sharing-analysis-using-sql-1fb2e85864ce" target="_blank" class="layer-link"></a>
-
-              </div>
-            </li>
-        </div>
-
-        <script>
-        const tabs = document.querySelectorAll('.tab');
-        const images = document.querySelectorAll('.image-grid img');
-
-        function filterImages(category) {
-          for (const image of images) {
-            if (image.dataset.category === category || category === 'all') {
-              image.classList.remove('hidden');
-            } else {
-              image.classList.add('hidden');
-            }
-          }
-        }
-
-        for (const tab of tabs) {
-          tab.addEventListener('click', () => {
-            for (const otherTab of tabs) {
-              otherTab.classList.remove('selected');
-            }
-          tab.classList.add('selected');
-            filterImages(tab.dataset.category);
-          });
-        }
-        tabs[0].click();
-        </script>
-      </section>
-
-      <!-- 
-        - #PLATFORM
-      -->
-
-      <section class="service" aria-labelledby="service-label">
-        <div class="container">
-
-          <div class="title-wrapper">
-
-            <div>
-              <p class="section-subtitle">
-                Output
-              </p>
-
-              <h2 class="h2 section-title" id="service-label">Platforms</h2>
-            </div>
-
-            <p class="section-text">
-              These are the websites where you may view all of my work. I use Github to host all of my repositories. Medium is where I document and share the process of my projects. 
-              Last, novyPro is where I publish my Power BI dashboards.
+            <p class="eyebrow">About</p>
+            <p class="about__lead" style="margin-top:16px;">
+              I build ad systems that generate leads, boost conversions, and deliver
+              <span class="accent">profitable</span> results.
             </p>
-
           </div>
-
-          <div class="slider" data-slider>
-
-            <ul class="slider-container service-list" data-slider-container>
-
-              <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="logo-github"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">Github</h3>
-
-                  <p class="card-text">
-                    GitHub is a platform for online software development. It is used for software project storage, tracking, and collaboration. This is where I keep all of my project's source files.
-                  </p>
-
-                  <span class="text-lg card-number">01</span>
-
-                  <a href="https://bit.ly/neilmartinez-github" target="_blank" class="layer-link" aria-label="Check out my repositories"></a>
-
-                </div>
-              </li>
-
-              <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="podium-outline"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">novyPro</h3>
-
-                  <p class="card-text">
-                    Power BI dashboards can be shared and uploaded to novyPro. Check out all the dashboards I made.
-                  </p>
-
-                  <span class="text-lg card-number">02</span>
-
-                  <a href="https://bit.ly/neilmartinez-novypro" target="_blank" class="layer-link" aria-label="Check out my BI Portfolio"></a>
-
-                </div>
-              </li>
-
-              <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="logo-medium"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">Medium</h3>
-
-                  <p class="card-text">
-                    Readers can find innovative ideas on the open platform Medium, where both established writers and up-and-coming writers can contribute their work on any subject. View the documentation for all of my projects.
-                  </p>
-
-                  <span class="text-lg card-number">03</span>
-
-                  <a href="https://bit.ly/neilmartinez-medium" target="_blank" class="layer-link" aria-label="Check out my blogs"></a>
-
-                </div>
-              </li>
-              
-              <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="journal-outline"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">Kaggle Notebook</h3>
-
-                  <p class="card-text">
-                    Kaggle is an online community platform for data scientists and machine learning enthusiasts. 
-                    Kaggle allows users to collaborate with other users, find and publish datasets, use GPU integrated notebooks, and compete with other data scientists to solve data science challenges.
-                  </p>
-
-                  <span class="text-lg card-number">04</span>
-
-                  <a href="https://www.kaggle.com/neilangelomartinez" class="layer-link" aria-label="">Check out my Kaggle notebook</a>
-
-                </div>
-              </li>
-
-              <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="stats-chart-outline"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">Tableau</h3>
-
-                  <p class="card-text">
-                    Coming Soon
-                  </p>
-
-                  <span class="text-lg card-number">05</span>
-
-                  <a href="#" class="layer-link" aria-label="Coming Soon"></a>
-
-                </div>
-              </li>
-
-              
-
-              <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="logo-youtube"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">YouTube</h3>
-
-                  <p class="card-text">
-                    Coming Soon
-                  </p>
-
-                  <span class="text-lg card-number">06</span>
-
-                  <a href="#" class="layer-link" aria-label="Coming Soon"></a>
-
-                </div>
-              </li>
-
-            </ul>
-
-            <div class="slider-controls">
-              <button class="slider-control prev" data-slider-prev aria-label="Slide to previous item">
-                <div class="line"></div>
-                <div class="arrow"></div>
-              </button>
-
-              <button class="slider-control next" data-slider-next aria-label="Slide to next item">
-                <div class="line"></div>
-                <div class="arrow"></div>
-              </button>
+          <div class="about__body">
+            <p>
+              I specialize in Meta Ads (Facebook &amp; Instagram) with hands-on experience across email marketing,
+              creative strategy, and funnel optimization. I've worked with service-based businesses, eCommerce
+              brands, and content agencies both locally and in the U.S.
+            </p>
+            <p>
+              My approach is grounded in data, fueled by creativity, and refined through constant testing — now
+              amplified by AI to ship creative and landing pages faster than a traditional workflow allows.
+            </p>
+            <div class="about__meta">
+              <span class="tag">Philippines · Remote</span>
+              <span class="tag">He/Him</span>
+              <span class="tag">2 yrs paid social</span>
+              <span class="tag">Meta · Google · TikTok</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ============================ WORK / CASE STUDIES ============================ -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-idx">01 / SELECTED WORK</p>
+          <h2>Handled ad accounts &amp; results</h2>
+        </div>
+
+        <!-- CASE 1 — US Tech Brand (scale) -->
+        <article class="case reveal">
+          <div class="case__head">
+            <div>
+              <h3 class="case__title">U.S. Tech Brand — Enterprise-scale acquisition</h3>
+              <p class="case__tagline">Meta Ads Specialist · full-time · 2024</p>
+            </div>
+            <span class="case__badge">Scale · Multi-platform</span>
+          </div>
+          <div class="case__body">
+            <dl class="case__narrative">
+              <div class="cn-row">
+                <dt>Challenge</dt>
+                <dd>Drive high-volume customer acquisition for a U.S. tech brand while keeping spend efficient across Meta, Google, Microsoft &amp; Amazon Ads.</dd>
+              </div>
+              <div class="cn-row">
+                <dt>What I did</dt>
+                <dd>Set up and monitored campaigns, optimized creatives against performance targets, and delivered daily performance reports, weekly creative breakdowns, and post-purchase survey analyses to steer strategy.</dd>
+              </div>
+              <div class="cn-row cn-row--result">
+                <dt>Result</dt>
+                <dd>Managed campaigns at massive scale — 27.9M reach and 188M impressions driving 31,000 purchases.</dd>
+              </div>
+            </dl>
+            <div class="terminal">
+              <div class="terminal__bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">ads-manager · account-summary</span></div>
+              <table class="tbl">
+                <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+                <tbody>
+                  <tr><td>Reach</td><td>27.9M</td></tr>
+                  <tr><td>Impressions</td><td>188M</td></tr>
+                  <tr class="win"><td>Purchases</td><td class="roas">31,000</td></tr>
+                  <tr><td>Reporting</td><td>Daily + Weekly</td></tr>
+                </tbody>
+                <tfoot><tr><td>Platforms</td><td>Meta · Google · MSFT · Amazon</td></tr></tfoot>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE 2 — Own Brand -->
+        <article class="case reveal">
+          <div class="case__head">
+            <div>
+              <h3 class="case__title">Own Brand — Profitable DTC from scratch</h3>
+              <p class="case__tagline">Freelance brand owner · 2025</p>
+            </div>
+            <span class="case__badge">CBO · Scaling</span>
+          </div>
+          <div class="case__body">
+            <dl class="case__narrative">
+              <div class="cn-row">
+                <dt>Challenge</dt>
+                <dd>Launch and scale my own brand profitably — owning every lever from strategy to creative to tracking.</dd>
+              </div>
+              <div class="cn-row">
+                <dt>What I did</dt>
+                <dd>Ran all ad operations over 6 months: creative testing, CBO structure, scaling, and performance tracking — building content systems that fed a steady creative pipeline.</dd>
+              </div>
+              <div class="cn-row cn-row--result">
+                <dt>Result</dt>
+                <dd>A consistent 2.98x ROAS at a 60% profit margin — ₱1.8M in purchase value from just over ₱633K in spend.</dd>
+              </div>
+            </dl>
+            <div class="terminal">
+              <div class="terminal__bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">ads-manager · own-brand</span></div>
+              <table class="tbl">
+                <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+                <tbody>
+                  <tr><td>Ad spend</td><td>₱633K</td></tr>
+                  <tr><td>Purchase value</td><td>₱1.8M</td></tr>
+                  <tr class="win"><td>Purchase ROAS</td><td class="roas">2.98x</td></tr>
+                  <tr><td>Profit margin</td><td class="roas">60%</td></tr>
+                </tbody>
+                <tfoot><tr><td>Duration</td><td>6 months</td></tr></tfoot>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE 3 — PH Dropshipping -->
+        <article class="case reveal">
+          <div class="case__head">
+            <div>
+              <h3 class="case__title">PH Dropshipping — Test &amp; scale on a budget</h3>
+              <p class="case__tagline">Project basis · Sep–Dec 2024</p>
+            </div>
+            <span class="case__badge">ABO + CBO</span>
+          </div>
+          <div class="case__body">
+            <dl class="case__narrative">
+              <div class="cn-row">
+                <dt>Challenge</dt>
+                <dd>Deliver profitable purchases for a Philippine dropshipping brand on a lean, project-based budget.</dd>
+              </div>
+              <div class="cn-row">
+                <dt>What I did</dt>
+                <dd>Ran multiple testing and scaling campaigns using both ABO and CBO strategies — keeping cost-per-purchase profitable while pushing CTR and CPC efficiency.</dd>
+              </div>
+              <div class="cn-row cn-row--result">
+                <dt>Result</dt>
+                <dd>126 purchases at a 3.48x average ROAS; best campaign hit 4.13x with CTRs near 2%.</dd>
+              </div>
+            </dl>
+            <div class="terminal">
+              <div class="terminal__bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">ads-manager · dropshipping-ph</span></div>
+              <table class="tbl">
+                <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+                <tbody>
+                  <tr><td>Purchases</td><td>126</td></tr>
+                  <tr><td>Avg ROAS</td><td class="roas">3.48x</td></tr>
+                  <tr class="win"><td>Best ROAS</td><td class="roas">4.13x</td></tr>
+                  <tr><td>Avg CTR</td><td>~2.0%</td></tr>
+                </tbody>
+                <tfoot><tr><td>Structure</td><td>ABO test · CBO scale</td></tr></tfoot>
+              </table>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================ AI WORKFLOW ============================ -->
+    <section class="section" id="ai">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-idx">02 / DIFFERENTIATOR</p>
+          <h2>AI-powered creative &amp; landing pages</h2>
+        </div>
+        <p class="ai__lead reveal">
+          I use AI to compress the creative-to-launch cycle. <b>More concepts, faster tests, lower creative
+          cost</b> — without losing the strategy behind the ad. Here's how it fits into the funnel.
+        </p>
+
+        <div class="ai-grid reveal">
+          <div class="ai-card">
+            <p class="ai-card__k">AI Ad Creative</p>
+            <h3 class="ai-card__h">Concepts in minutes, not days</h3>
+            <p class="ai-card__p">I generate on-brand ad images with Claude Code + Nano Banana Pro — spinning up variation sets for cold-audience testing so more creative angles get in front of buyers, faster.</p>
+            <div class="ai-card__tools">
+              <span class="chip chip--ai">Claude Code</span>
+              <span class="chip chip--ai">Nano Banana Pro</span>
+              <span class="chip">Canva</span>
+            </div>
+          </div>
+          <div class="ai-card">
+            <p class="ai-card__k">AI Landing Pages</p>
+            <h3 class="ai-card__h">From brief to live page in hours</h3>
+            <p class="ai-card__p">I build and ship conversion-focused landing pages with Manus + Claude Code — matching the ad's message to the page so paid traffic lands on something built to convert.</p>
+            <div class="ai-card__tools">
+              <span class="chip chip--ai">Manus</span>
+              <span class="chip chip--ai">Claude Code</span>
+              <span class="chip">CRO structure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prompt -> Output -->
+        <div class="p2o reveal">
+          <div class="p2o__prompt">
+            <span class="lbl">Prompt → Nano Banana Pro</span>
+            <span class="caret">&gt;</span> Studio product shot on wet stone, soft morning light,
+            minimal negative space, 4:5, photoreal — generate a 6-variation set for cold-audience testing.
+          </div>
+          <div class="p2o__arrow">→</div>
+          <!-- Mock FB/IG ad unit — swap .adunit__creative placeholder for a real <img> -->
+          <div class="adunit">
+            <div class="adunit__top">
+              <div class="adunit__avatar">B</div>
+              <div class="adunit__meta">
+                <b>Your Brand</b>
+                <span>Sponsored</span>
+              </div>
+            </div>
+            <div class="adunit__creative"><span class="ph">AI creative // 4:5</span></div>
+            <div class="adunit__cta">
+              <small>Clinically-backed glow, on sale today</small>
+              <span class="adunit__btn">Shop now</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Landing page + funnel -->
+        <div class="lp-grid reveal">
+          <!-- Browser frame — swap .browser__view placeholder for a screenshot, set real URL on VIEW LIVE -->
+          <div class="browser">
+            <div class="browser__bar">
+              <span class="d"></span><span class="d"></span><span class="d"></span>
+              <span class="browser__url">yourbrand.com/lp/summer-offer</span>
+            </div>
+            <div class="browser__view"><span class="ph">Landing page preview // Manus + Claude Code</span></div>
+            <div class="browser__foot">
+              <small>Built in ~3 hrs with AI</small>
+              <a href="#" data-live target="_blank" rel="noopener">View live ↗</a>
+            </div>
           </div>
 
+          <div class="funnel">
+            <p class="funnel__k">Full-funnel view</p>
+            <div class="funnel__step">
+              <span class="funnel__n">01</span>
+              <div class="funnel__t"><b>AI ad creative</b><span>Concept + copy generated and tested</span></div>
+            </div>
+            <div class="funnel__step">
+              <span class="funnel__n">02</span>
+              <div class="funnel__t"><b>AI landing page</b><span>Message-matched, CRO-structured</span></div>
+            </div>
+            <div class="funnel__step funnel__step--result">
+              <span class="funnel__n">03</span>
+              <div class="funnel__t"><b>3.48x ROAS</b><span>avg. across scaling campaigns</span></div>
+            </div>
+          </div>
         </div>
-      </section>
-
-      <!--
-        - #BLOG
-      -->
-
-      <section class="section blog" aria-labelledby="blog-label">
-        <div id="blog" class="container">
-
-          <p class="section-subtitle" id="blog-label">Recent Articles</p>
-
-          <h2 class="h2 section-title">Achievements</h2>
-
-          <ul class="blog-list">
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner img-holder" style="--width: 700; --height: 470;">
-                  <img src="./assets/images/mspower-platform.png" width="700" height="470" loading="lazy"
-                    alt="Power Platform" class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <time class="time" datetime="2023-01-21">
-                    <span class="span text-lg">21</span>
-                    January 2023
-                  </time>
-
-                  <div>
-                    <h3 class="h3 card-title">Microsoft Certified: Power Platform Fundamentals</h3>
-
-                    <p class="card-text">
-                      I have successfully passed the Microsoft Power Platform Fundamentals (PL-900) certification exam. 
-                      This certification demonstrates my knowledge and expertise in using the Power Platform to create and manage low-code, no-code solutions for business processes and data analysis.
-                    </p>
-
-                    <a href="https://www.credly.com/badges/af4fe579-f8e5-46a4-9ba2-4103f9627e4c/public_url" class="btn has-before">
-                      <span class="span">View badge</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner img-holder" style="--width: 700; --height: 470;">
-                  <img src="./assets/images/advanced-data.png" width="700" height="470" loading="lazy"
-                    alt="Advanced Data Analytics" class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <time class="time" datetime="2022-01-06">
-                    <span class="span text-lg">06</span>
-                    January 2023
-                  </time>
-
-                  <div>
-                    <h3 class="h3 card-title">Advanced Data Analytics by Bayan Academy</h3>
-
-                    <p class="card-text">
-                      I've just completed the Advanced Data Analytics program from Bayan Academy supported by J.P. Morgan. This 15-day program covered advanced SQL, Orange Data mining, and writing a research paper. 
-                      Our research paper focused on "An Analysis of Reported Index Crimes in the Philippines 2020-2021." 
-                      I'm grateful for the opportunity to deepen my skills in data analytics and gain valuable insights from this program.
-                    </p>
-
-                    <a href="https://drive.google.com/file/d/14IHyHf8HeL2hEmb8VhZFaC2kQAeIBP_e/view?usp=share_link" target="_blank" class="btn has-before">
-                      <span class="span">Read paper</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner img-holder" style="--width: 470; --height: 663;">
-                  <img src="./assets/images/refocus-cert.jpg" width="470" height="663" loading="lazy"
-                    alt="Refocus" class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <time class="time" datetime="2022-12-12">
-                    <span class="span text-lg">12</span>
-                    December 2022
-                  </time>
-
-                  <div>
-                    <h3 class="h3 card-title">Refocus Data Analytics Core Track Certificate</h3>
-
-                    <p class="card-text">
-                      I have completed the core track of the Data Analytics program of Refocus. The core track comprises of Microsoft Excel, PostgreSQL, and Power BI. 
-                      I have completed 50 hours of video lectures, assessments, and self-study. With 14 assignments passed a lot of skills acquired.
-                      During the core track, I have also finished the Group Project: Elevating Yellavate.
-                    </p>
-
-                    <a href="https://drive.google.com/file/d/1rDEOpb3HTpzX3xy_GAeYEDZX4K-T8Zkf/view?usp=share_link" class="btn has-before">
-                      <span class="span">View certficate</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner img-holder" style="--width: 700; --height: 470;">
-                  <img src="./assets/images/pwc-certificate.jpg" width="700" height="470" loading="lazy"
-                    alt="PwC Power BI in Data Analytics" class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <time class="time" datetime="2022-12-12">
-                    <span class="span text-lg">12</span>
-                    December 2022
-                  </time>
-
-                  <div>
-                    <h3 class="h3 card-title">Power BI in Data Analytics Virtual Case Experience by PwC Switzerland</h3>
-
-                    <p class="card-text">
-                      I've completed the PwC Switzerland Power BI in Data Analytics Virtual Case Experience. I have improved better data cleaning and visualization techniques during the course of the program, which has helped me produce more appealing dashboards. 
-                      Making a dashboard for call center trends, churn analysis, and diversity & inclusion are all tasks.
-                    </p>
-
-                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7007903274930515968/" target="_blank" class="btn has-before">
-                      <span class="span">View certficate</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner img-holder" style="--width: 700; --height: 470;">
-                  <img src="./assets/images/career-essentials.png" width="700" height="470" loading="lazy"
-                    alt="Refocus" class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <time class="time" datetime="2022-12-11">
-                    <span class="span text-lg">11</span>
-                    December 2022
-                  </time>
-
-                  <div>
-                    <h3 class="h3 card-title">Career Essentials in Data Analysis by Microsoft and LinkedIn</h3>
-
-                    <p class="card-text">
-                      I have completed the Career Essentials in Data Analysis by Microsoft and LinkedIn. It is composed of three courses: Introduction to Career Skills in Data Analytics,
-                      Learning Data Analytics: 1 Foundation, and Learning Data Analytics Part 2: Extending and Applying Core Knowledge. After completing the three courses I passed the final exam of the program and 
-                      got the certificate.
-                    </p>
-
-                    <a href="https://www.linkedin.com/learning/certificates/c7a9e83acd36bcb149346a20ab7351d1f396eb32b3c8e33f8004121a4d533603" class="btn has-before">
-                      <span class="span">View certficate</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner img-holder" style="--width: 700; --height: 470;">
-                  <img src="./assets/images/accenture.jpg" width="700" height="470" loading="lazy"
-                    alt="Accenture Data Analytics and Visualization Virtual Experience" class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <time class="time" datetime="2022-12-02">
-                    <span class="span text-lg">02</span>
-                    December 2022
-                  </time>
-
-                  <div>
-                    <h3 class="h3 card-title">Accenture Data Analytics and Visualization Virtual Experience</h3>
-
-                    <p class="card-text">
-                      I am glad to have finished Accenture's Data Analytics and Visualization Virtual Experience via Forage. 
-                      This program provided me with an excellent opportunity to learn from industry experts while also gaining hands-on experience with real-world data analytics projects.
-
-Through Forage, a portal that offers a variety of virtual experiences in a number of fields, the application program was made available without fee. I was drawn to this program by the chance to learn from Accenture, a leading global professional services company, as well as the ease of completing the program online.
-                    </p>
-
-                    <a href="https://www.linkedin.com/posts/neilangelomartinez_dataanalytics-visualization-forage-activity-7004327211897950208-lbxT?utm_source=share&utm_medium=member_desktop" target="_blank" class="btn has-before">
-                      <span class="span">View certficate</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner img-holder" style="--width: 700; --height: 470;">
-                  <img src="./assets/images/it-support.jpg" width="700" height="470" loading="lazy"
-                    alt="Refocus" class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <time class="time" datetime="2022-12-01">
-                    <span class="span text-lg">01</span>
-                    December 2022
-                  </time>
-
-                  <div>
-                    <h3 class="h3 card-title">My second Google certification</h3>
-
-                    <p class="card-text">
-                      Since Python is also used in Data Analysis, I enrolled in Google IT Support with Python to further expand my knowledge with Python. 
-                      I learned a lot of Python commands and in this course where I learned Git, and created my website through Git Pages. 
-                    </p>
-
-                    <a href="https://coursera.org/share/a1a70bd5acad5393167a89b97eecfe1d" class="btn has-before">
-                      <span class="span">View certficate</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner img-holder" style="--width: 700; --height: 470;">
-                  <img src="./assets/images/coursera_certificate.jpg" width="700" height="470" loading="lazy"
-                    alt="Google Data Analytics Certificate" class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <time class="time" datetime="2022-11-21">
-                    <span class="span text-lg">21</span>
-                    November 2022
-                  </time>
-
-                  <div>
-                    <h3 class="h3 card-title">Google Data Analytics Certificate</h3>
-
-                    <p class="card-text">
-                      Completing the Google Data Analytics Certification through Coursera was one of my proudest achievements.
-                      This certification program covered a wide range of data analytics topics, such as data visualization and statistical analysis. 
-                      It took a great deal of focus and hard work, as well as finishing capstone project.
-                      This certification has given me the courage to take on new challenges in my profession and has helped me stand out in a competitive job market. 
-                      I am grateful for the opportunity to have completed this program, and I believe it has given me the skills and knowledge in starting my career as a data analyst.
-                    </p>
-
-                    <a href="https://coursera.org/share/057f842632af2a93575469021c10d1a5" target="_blank" class="btn has-before">
-                      <span class="span">View certficate</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner img-holder" style="--width: 700; --height: 470;">
-                  <img src="./assets/images/refocus.jpg" width="700" height="470" loading="lazy"
-                    alt="Refocus" class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <time class="time" datetime="2022-10-18">
-                    <span class="span text-lg">27</span>
-                    October 2022
-                  </time>
-
-                  <div>
-                    <h3 class="h3 card-title">My journey at Refocus</h3>
-
-                    <p class="card-text">
-                      I received a call from a marketing agent about the opportunity to become a data analyst. Recognizing the potential for a fulfilling and exciting career in this field, I immediately enrolled in Refocus Digital Academy to fast track my education and training in data analytics.
-                      I was excited to have this opportunity and was committed to making the most of it. Through my studies at Refocus Digital Academy, I gained a strong foundation in the tools and techniques used in the field, as well as the practical experience needed to succeed as a data analyst. 
-                      I was confident that this program would provide me with the skills and knowledge I needed to excel in this exciting and rapidly-growing field.
-                    </p>
-
-                    <a href="https://refocus.thinkific.com/" class="btn has-before">
-                      <span class="span">Read more</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
+      </div>
+    </section>
+
+    <!-- ============================ SERVICES ============================ -->
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-idx">03 / SERVICES</p>
+          <h2>How I can help</h2>
         </div>
-      </section>
+        <div class="svc-grid reveal">
+          <div class="svc"><p class="svc__n">01</p><h3 class="svc__h">Meta Ads management</h3><p class="svc__p">Full-funnel campaign strategy, build, and daily optimization on Facebook &amp; Instagram — ABO/CBO testing to scaling.</p></div>
+          <div class="svc"><p class="svc__n">02</p><h3 class="svc__h">Funnel &amp; landing pages</h3><p class="svc__p">Funnel setup and AI-built, conversion-focused landing pages that match your ad message end to end.</p></div>
+          <div class="svc"><p class="svc__n">03</p><h3 class="svc__h">Creative strategy &amp; testing</h3><p class="svc__p">Ad concepts, copywriting, and AI-generated creative variations run through a structured testing framework.</p></div>
+          <div class="svc"><p class="svc__n">04</p><h3 class="svc__h">Email &amp; SMS marketing</h3><p class="svc__p">Klaviyo, Mailchimp &amp; PostScript flows and campaigns to lift retention and repeat revenue.</p></div>
+          <div class="svc"><p class="svc__n">05</p><h3 class="svc__h">Tracking &amp; reporting</h3><p class="svc__p">Pixel &amp; Conversions API setup, custom events, and clear weekly reporting on CPL, ROAS &amp; creative.</p></div>
+          <div class="svc"><p class="svc__n">06</p><h3 class="svc__h">Automation</h3><p class="svc__p">ManyChat Messenger lead capture and Zapier automations to connect your stack and save hours.</p></div>
+        </div>
+      </div>
+    </section>
 
-    </article>
+    <!-- ============================ SKILLS ============================ -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-idx">04 / STACK</p>
+          <h2>Skills &amp; tools</h2>
+        </div>
+        <div class="skills-grid reveal">
+          <div class="skillset">
+            <p class="skillset__k">Ad platforms <span>/ 03</span></p>
+            <div class="chips"><span class="chip">Meta Ads</span><span class="chip">Google Ads</span><span class="chip">TikTok Ads</span></div>
+          </div>
+          <div class="skillset">
+            <p class="skillset__k">AI creative <span>/ 03</span></p>
+            <div class="chips"><span class="chip chip--ai">Claude Code</span><span class="chip chip--ai">Nano Banana Pro</span><span class="chip chip--ai">Manus</span></div>
+          </div>
+          <div class="skillset">
+            <p class="skillset__k">Email &amp; SMS <span>/ 03</span></p>
+            <div class="chips"><span class="chip">Klaviyo</span><span class="chip">Mailchimp</span><span class="chip">PostScript</span></div>
+          </div>
+          <div class="skillset">
+            <p class="skillset__k">Automation &amp; commerce <span>/ 03</span></p>
+            <div class="chips"><span class="chip">ManyChat</span><span class="chip">Zapier</span><span class="chip">Shopify</span></div>
+          </div>
+          <div class="skillset">
+            <p class="skillset__k">Technical <span>/ 05</span></p>
+            <div class="chips"><span class="chip">Funnel setup</span><span class="chip">A/B testing</span><span class="chip">Audience targeting</span><span class="chip">Instant Forms</span><span class="chip">Pixel &amp; CAPI</span></div>
+          </div>
+          <div class="skillset">
+            <p class="skillset__k">Workspace <span>/ 04</span></p>
+            <div class="chips"><span class="chip">Notion</span><span class="chip">Slack</span><span class="chip">Google Workspace</span><span class="chip">Canva</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ EXPERIENCE ============================ -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-idx">05 / EXPERIENCE</p>
+          <h2>Where I've worked</h2>
+        </div>
+
+        <div class="reveal">
+          <div class="xp">
+            <div class="xp__when"><b>2025 — Present</b>Praised Media</div>
+            <div>
+              <h3 class="xp__role">Meta Ads Manager</h3>
+              <p class="xp__co">Praised Media</p>
+              <ul class="xp__pts">
+                <li>Own strategy &amp; daily operations for lead-gen campaigns via Meta Instant Forms &amp; Messenger.</li>
+                <li>Build ad structures, write copy, upload creatives, and track performance with custom conversion events.</li>
+                <li>Maintain weekly reporting on CPL, creative performance &amp; post-purchase results; implemented ManyChat automations for Messenger lead capture.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="xp">
+            <div class="xp__when"><b>2025</b>Independent</div>
+            <div>
+              <h3 class="xp__role">Freelance Brand Owner</h3>
+              <p class="xp__co">Own DTC brand</p>
+              <ul class="xp__pts">
+                <li>Ran all ad operations for 6 months — strategy, creative testing, and performance tracking.</li>
+                <li>Achieved a consistent 2.98x ROAS at a 60% profit margin.</li>
+                <li>Hands-on with CBO testing &amp; scaling and building repeatable content systems.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="xp">
+            <div class="xp__when"><b>2024</b>U.S. Tech Company</div>
+            <div>
+              <h3 class="xp__role">Marketing VA · Meta Ads Specialist</h3>
+              <p class="xp__co">U.S.-based tech brand</p>
+              <ul class="xp__pts">
+                <li>Set up campaigns, monitored ad spend, and optimized creatives to hit performance targets.</li>
+                <li>Delivered daily performance reports, weekly creative breakdowns &amp; post-purchase survey analyses.</li>
+                <li>Contributed to email campaign reviews and reporting across Google, Microsoft &amp; Amazon Ads.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CERTIFICATIONS ============================ -->
+    <section class="section" id="certs">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-idx">06 / CREDENTIALS</p>
+          <h2>Certifications</h2>
+        </div>
+        <div class="certs reveal">
+          <a class="cert" href="https://www.coursera.org/account/accomplishments/professional-cert/N67XA3YG554N" target="_blank" rel="noopener">
+            <p class="cert__n">01</p><p class="cert__h">Google Data Analytics</p><p class="cert__by">Google · Coursera</p>
+          </a>
+          <a class="cert" href="https://www.coursera.org/account/accomplishments/professional-cert/WPGAJW8FEV9T" target="_blank" rel="noopener">
+            <p class="cert__n">02</p><p class="cert__h">IT Automation with Python</p><p class="cert__by">Google · Coursera</p>
+          </a>
+          <a class="cert" href="https://www.credly.com/badges/af4fe579-f8e5-46a4-9ba2-4103f9627e4c/public_url" target="_blank" rel="noopener">
+            <p class="cert__n">03</p><p class="cert__h">Power Platform Fundamentals (PL-900)</p><p class="cert__by">Microsoft</p>
+          </a>
+          <a class="cert" href="https://www.linkedin.com/learning/certificates/c7a9e83acd36bcb149346a20ab7351d1f396eb32b3c8e33f8004121a4d533603" target="_blank" rel="noopener">
+            <p class="cert__n">04</p><p class="cert__h">Career Essentials in Data Analysis</p><p class="cert__by">Microsoft · LinkedIn</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section class="section contact" id="contact">
+      <div class="dotgrid"></div>
+      <div class="wrap contact__inner">
+        <p class="eyebrow reveal">Contact</p>
+        <h2 class="reveal">Let's make your ad spend <span class="accent">profitable.</span></h2>
+        <p class="contact__sub reveal">
+          Looking for a media buyer / marketing VA who ships fast and reads the data? Let's talk about your goals.
+        </p>
+        <div class="contact__cta reveal">
+          <a class="btn btn--primary" href="mailto:neilangelomartinez@gmail.com">Email me <span class="arw">↗</span></a>
+          <a class="btn" href="https://drive.google.com/file/d/1ukwgBs5nPKJeJg_sbQviEwwuu7FX-N4s/view?usp=sharing" target="_blank" rel="noopener">View résumé <span class="arw">↗</span></a>
+        </div>
+        <div class="contact__list reveal">
+          <a href="mailto:neilangelomartinez@gmail.com">neilangelomartinez@gmail.com</a>
+          <a href="tel:+639274021199">+63 927 402 1199</a>
+          <a href="https://bit.ly/neilmartinez-linkedin" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-
-
-
-
-  <!--
-    - #FOOTER
-  -->
-
+  <!-- ============================ FOOTER ============================ -->
   <footer class="footer">
-    <div id="contact" class="container">
-
-      <ul class="footer-list">
-
-        <li>
-          <p class="h4 footer-list-title">Contact me</p>
-        </li>
-
-        <li>
-          <a href="mailto:neilangelomartinez@gmail.com" class="footer-link">neilangelomartinez@gmail.com</a>
-        </li>
-
-      </ul>
-
-      <ul class="footer-list">
-
-        <li>
-          <p class="h4 footer-list-title">Location</p>
-        </li>
-
-        
-
-      </ul>
-
-      <ul class="social-list">
-
-        <li>
-          <a href="https://bit.ly/neilmartinez-github" target="_blank" class="social-link">
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://bit.ly/neilmartinez-medium" target="_blank" class="social-link">
-            <ion-icon name="logo-medium"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://bit.ly/neilmartinez-facebook" target="_blank" class="social-link">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://bit.ly/neilmartinez-linkedin" target="_blank" class="social-link">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-        </li>
-
-      </ul>
-
+    <p>© <span data-year>2026</span> Neil Angelo Martinez</p>
+    <div class="socials">
+      <a href="https://bit.ly/neilmartinez-linkedin" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:neilangelomartinez@gmail.com">Email</a>
+      <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
-
-
-
-
-  <!--
-    - custom js link
-  -->
   <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

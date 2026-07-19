@@ -1,21 +1,29 @@
-<h1 align="center">Hi 👋, I'm Neil Angelo Martinez</h1>
-<h3 align="center">An aspiring data analyst from the Philippines.</h3>
+# neilangelomartinez.github.io
 
-- 👨‍💻 All of my projects are available at [https://github.com/neilangelomartinez](https://github.com/neilangelomartinez)
+Personal portfolio for **Neil Martinez** — performance Media Buyer & Marketing VA (Meta Ads + AI creative).
 
-- 📫 How to reach me **neilangelomartinez@gmail.com**
+🌐 **Live:** https://neilangelomartinez.github.io/
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/www.linkedin.com/in/neilangelomartinez/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="www.linkedin.com/in/neilangelomartinez/" height="30" width="40" /></a>
-<a href="https://fb.com/facebook.com/neilangelomartinez" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="facebook.com/neilangelomartinez" height="30" width="40" /></a>
-<a href="https://instagram.com/martinezneil" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="martinezneil" height="30" width="40" /></a>
-<a href="https://discord.gg/neo026#6700" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="neo026#6700" height="30" width="40" /></a>
-</p>
+## Stack
+Plain static site — no build step. Deployed via GitHub Pages (Jekyll passthrough workflow on `main`).
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
+- `index.html` — single-page site (all sections)
+- `assets/css/style.css` — design system + responsive styles
+- `assets/js/script.js` — theme toggle, scroll reveal, KPI count-up, mobile nav
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=neilangelomartinez&show_icons=true&locale=en&layout=compact" alt="neilangelomartinez" /></p>
+## Design language
+"Nothing OS" inspired — monochrome canvas, a single red (`#d71921`) accent used only on key values,
+type-driven hierarchy (Space Grotesk · Space Mono · Doto), no gradients or shadows. First-class dark (OLED
+black) and light (warm off-white) themes. See `style-guide.md`.
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=neilangelomartinez&show_icons=true&locale=en" alt="neilangelomartinez" /></p>
+## Editing / swapping in real assets
+Placeholders are wired for easy swap-in (see the comment block at the top of `index.html`):
+- **AI ad creatives** → replace the placeholder inside `.adunit__creative` with an `<img>`.
+- **Landing page preview** → replace the placeholder inside `.browser__view` and set the real URL on the `View live` link.
+- **Ad account screenshots** → drop into a case study's `.terminal` (swap the `<table>` for an `<img>`).
+
+## Local preview
+Open `index.html` directly, or serve the folder:
+```bash
+python3 -m http.server 8000
+```

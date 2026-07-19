@@ -1,148 +1,107 @@
 'use strict';
 
+/* =====================================================================
+   NEIL MARTINEZ — portfolio interactions
+   Nothing OS ethos: motion is minimal and mechanical ("click, not swoosh").
+   ===================================================================== */
 
+/* ---------- Theme toggle (persisted) ---------- */
+(function theme() {
+  const root = document.documentElement;
+  const KEY = 'nm-theme';
+  const saved = localStorage.getItem(KEY);
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  const initial = saved || (prefersLight ? 'light' : 'dark');
+  root.setAttribute('data-theme', initial);
 
-/**
- * add event listener on multiple elements
- */
-
-const addEventOnElements = function (elements, eventType, callback) {
-  for (let i = 0, len = elements.length; i < len; i++) {
-    elements[i].addEventListener(eventType, callback);
-  }
-}
-
-
-
-/**
- * PRELOADER
- */
-
-const preloader = document.querySelector("[data-preloader]");
-
-window.addEventListener("DOMContentLoaded", function () {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
-});
-
-
-
-/**
- * NAVBAR
- * navbar toggle for mobile
- */
-
-const navTogglers = document.querySelectorAll("[data-nav-toggler]");
-const navToggleBtn = document.querySelector("[data-nav-toggle-btn]");
-const navbar = document.querySelector("[data-navbar]");
-const overlay = document.querySelector("[data-overlay]");
-
-const toggleNavbar = function () {
-  navbar.classList.toggle("active");
-  navToggleBtn.classList.toggle("active");
-  overlay.classList.toggle("active");
-  document.body.classList.toggle("nav-active");
-}
-
-addEventOnElements(navTogglers, "click", toggleNavbar);
-
-
-
-/**
- * HEADER
- * header active when window scroll down to 100px
- */
-
-const header = document.querySelector("[data-header]");
-
-window.addEventListener("scroll", function () {
-  if (window.scrollY >= 100) {
-    header.classList.add("active");
-  } else {
-    header.classList.remove("active");
-  }
-});
-
-
-/**
- * SLIDER
- */
-
-const sliders = document.querySelectorAll("[data-slider]");
-
-const initSlider = function (currentSlider) {
-
-  const sliderContainer = currentSlider.querySelector("[data-slider-container]");
-  const sliderPrevBtn = currentSlider.querySelector("[data-slider-prev]");
-  const sliderNextBtn = currentSlider.querySelector("[data-slider-next]");
-
-  let totalSliderVisibleItems = Number(getComputedStyle(currentSlider).getPropertyValue("--slider-items"));
-  let totalSlidableItems = sliderContainer.childElementCount - totalSliderVisibleItems;
-
-  let currentSlidePos = 0;
-
-  const moveSliderItem = function () {
-    sliderContainer.style.transform = `translateX(-${sliderContainer.children[currentSlidePos].offsetLeft}px)`;
-  }
-
-  /**
-   * NEXT SLIDE
-   */
-  const slideNext = function () {
-    const slideEnd = currentSlidePos >= totalSlidableItems;
-
-    if (slideEnd) {
-      currentSlidePos = 0;
-    } else {
-      currentSlidePos++;
-    }
-
-    moveSliderItem();
-  }
-
-  sliderNextBtn.addEventListener("click", slideNext);
-
-  /**
-   * PREVIOUS SLIDE
-   */
-  const slidePrev = function () {
-    if (currentSlidePos <= 0) {
-      currentSlidePos = totalSlidableItems;
-    } else {
-      currentSlidePos--;
-    }
-
-    moveSliderItem();
-  }
-
-  sliderPrevBtn.addEventListener("click", slidePrev);
-
-  const dontHaveExtraItem = totalSlidableItems <= 0;
-  if (dontHaveExtraItem) {
-    sliderNextBtn.style.display = 'none';
-    sliderPrevBtn.style.display = 'none';
-  }
-
-  /**
-   * slide with [shift + mouse wheel]
-   */
-
-  currentSlider.addEventListener("wheel", function (event) {
-    if (event.shiftKey && event.deltaY > 0) slideNext();
-    if (event.shiftKey && event.deltaY < 0) slidePrev();
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-theme-toggle]');
+    if (!btn) return;
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem(KEY, next);
   });
+})();
 
-  /**
-   * RESPONSIVE
-   */
+/* ---------- Sticky nav state ---------- */
+(function stickyNav() {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
 
-  window.addEventListener("resize", function () {
-    totalSliderVisibleItems = Number(getComputedStyle(currentSlider).getPropertyValue("--slider-items"));
-    totalSlidableItems = sliderContainer.childElementCount - totalSliderVisibleItems;
-
-    moveSliderItem();
+/* ---------- Mobile nav ---------- */
+(function mobileNav() {
+  const burger = document.querySelector('[data-burger]');
+  const links = document.querySelector('.nav__links');
+  if (!burger || !links) return;
+  burger.addEventListener('click', () => links.classList.toggle('open'));
+  links.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') links.classList.remove('open');
   });
+})();
 
-}
+/* ---------- Reveal on scroll ---------- */
+(function reveal() {
+  const els = document.querySelectorAll('.reveal');
+  if (!els.length || !('IntersectionObserver' in window)) {
+    els.forEach((el) => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+  els.forEach((el) => io.observe(el));
+})();
 
-for (let i = 0, len = sliders.length; i < len; i++) { initSlider(sliders[i]); }
+/* ---------- Count-up for KPI / stat numbers ----------
+   Markup: <span class="count" data-to="27.9" data-suffix="M" data-decimals="1">0</span>
+   The suffix (M / K / x / %) is rendered separately so only the digits animate. */
+(function countUp() {
+  const nums = document.querySelectorAll('[data-to]');
+  if (!nums.length) return;
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const format = (val, decimals) =>
+    decimals > 0 ? val.toFixed(decimals) : Math.round(val).toLocaleString('en-US');
+
+  const run = (el) => {
+    const to = parseFloat(el.dataset.to);
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    if (reduce) { el.textContent = format(to, decimals); return; }
+
+    const dur = 1200;
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / dur, 1);
+      // easeOutExpo — decisive, then settles
+      const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+      el.textContent = format(to * eased, decimals);
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = format(to, decimals);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  if (!('IntersectionObserver' in window)) { nums.forEach(run); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { run(entry.target); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.6 });
+  nums.forEach((el) => io.observe(el));
+})();
+
+/* ---------- Footer year ---------- */
+(function year() {
+  const y = document.querySelector('[data-year]');
+  if (y) y.textContent = new Date().getFullYear();
+})();
