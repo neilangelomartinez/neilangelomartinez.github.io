@@ -15,9 +15,9 @@
   --bg-elev: rgba(255, 255, 255, 0.03);
 
   --text-display: rgba(255, 255, 255, 1);
-  --text-primary: rgba(255, 255, 255, 0.90);
-  --text-secondary: rgba(255, 255, 255, 0.58);
-  --text-disabled: rgba(255, 255, 255, 0.38);
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.66);
+  --text-disabled: rgba(255, 255, 255, 0.48);
 
   --line: rgba(255, 255, 255, 0.14);
   --line-strong: rgba(255, 255, 255, 0.28);
@@ -53,9 +53,9 @@
   --bg-elev: rgba(10, 10, 10, 0.02);
 
   --text-display: #0a0a0a;
-  --text-primary: rgba(10, 10, 10, 0.90);
-  --text-secondary: rgba(10, 10, 10, 0.58);
-  --text-disabled: rgba(10, 10, 10, 0.40);
+  --text-primary: rgba(10, 10, 10, 0.92);
+  --text-secondary: rgba(10, 10, 10, 0.64);
+  --text-disabled: rgba(10, 10, 10, 0.50);
 
   --line: rgba(10, 10, 10, 0.14);
   --line-strong: rgba(10, 10, 10, 0.30);
@@ -189,7 +189,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: color var(--tr);
 }
 .nav__links a:hover { color: var(--accent); }
+.nav__links a.active { color: var(--accent); }
 .nav__tools { display: flex; align-items: center; gap: 14px; }
+
+/* Sticky mobile CTA (phones only) */
+.mobile-cta { display: none; }
+@media (max-width: 720px) {
+  .mobile-cta {
+    display: flex; gap: 10px;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    transition: transform var(--tr), opacity var(--tr);
+  }
+  .mobile-cta .btn { flex: 1; justify-content: center; }
+  .mobile-cta.hidden { transform: translateY(120%); opacity: 0; pointer-events: none; }
+}
 
 .status-pill {
   display: inline-flex; align-items: center; gap: 8px;
@@ -456,7 +472,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .xp__co { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin: 4px 0 14px; }
 .xp__pts { display: grid; gap: 9px; }
 .xp__pts li { position: relative; padding-left: 20px; color: var(--text-secondary); font-size: 15px; line-height: 1.5; }
-.xp__pts li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+.xp__pts li::before { content: "›"; position: absolute; left: 0; color: var(--accent); }
 
 /* ================================================================
    CERTIFICATIONS

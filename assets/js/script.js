@@ -74,6 +74,8 @@
     decimals > 0 ? val.toFixed(decimals) : Math.round(val).toLocaleString('en-US');
 
   const run = (el) => {
+    if (el.dataset.counted) return;
+    el.dataset.counted = '1';
     const to = parseFloat(el.dataset.to);
     const decimals = parseInt(el.dataset.decimals || '0', 10);
     if (reduce) { el.textContent = format(to, decimals); return; }
@@ -82,7 +84,7 @@
     const start = performance.now();
     const tick = (now) => {
       const p = Math.min((now - start) / dur, 1);
-      // easeOutExpo — decisive, then settles
+      // easeOutExpo: decisive, then settles
       const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
       el.textContent = format(to * eased, decimals);
       if (p < 1) requestAnimationFrame(tick);
@@ -91,13 +93,57 @@
     requestAnimationFrame(tick);
   };
 
+  // Numbers already on screen at load animate right away (no scroll needed).
+  const inView = (el) => {
+    const r = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    return r.top < vh * 0.9 && r.bottom > 0;
+  };
+  nums.forEach((el) => { if (inView(el)) run(el); });
+
   if (!('IntersectionObserver' in window)) { nums.forEach(run); return; }
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) { run(entry.target); io.unobserve(entry.target); }
     });
-  }, { threshold: 0.6 });
-  nums.forEach((el) => io.observe(el));
+  }, { threshold: 0.35 });
+  nums.forEach((el) => { if (!el.dataset.counted) io.observe(el); });
+})();
+
+/* ---------- Active nav link (which section you're in) ---------- */
+(function activeNav() {
+  const links = Array.prototype.slice.call(document.querySelectorAll('.nav__links a'));
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  const map = new Map();
+  links.forEach((a) => {
+    const id = a.getAttribute('href');
+    if (id && id.charAt(0) === '#' && id.length > 1) {
+      const sec = document.querySelector(id);
+      if (sec) map.set(sec, a);
+    }
+  });
+  if (!map.size) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        links.forEach((l) => l.classList.remove('active'));
+        const a = map.get(entry.target);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  map.forEach((_, sec) => io.observe(sec));
+})();
+
+/* ---------- Hide sticky mobile CTA over the contact section ---------- */
+(function mobileCta() {
+  const bar = document.querySelector('[data-mobile-cta]');
+  const contact = document.querySelector('#contact');
+  if (!bar || !contact || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => bar.classList.toggle('hidden', e.isIntersecting));
+  }, { threshold: 0.15 });
+  io.observe(contact);
 })();
 
 /* ---------- Footer year ---------- */
