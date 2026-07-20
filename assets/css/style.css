@@ -234,8 +234,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ================================================================
    HERO
    ================================================================ */
-.hero { position: relative; padding-top: 148px; padding-bottom: var(--s-vast); overflow: hidden; }
-.hero__inner { position: relative; z-index: 1; }
+.hero { position: relative; padding-top: 132px; padding-bottom: var(--s-vast); overflow: hidden; }
+.hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.12fr 0.88fr; gap: var(--s-wide); align-items: center; }
+
+/* Hero avatar (crossfading portraits) */
+.hero__media { position: relative; display: flex; justify-content: center; align-items: flex-end; }
+.avatar { position: relative; width: 100%; max-width: 430px; margin-inline: auto; aspect-ratio: 600 / 895; }
+.avatar__img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: contain; object-position: bottom center;
+  opacity: 0; transition: opacity 0.7s ease;
+  -webkit-mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+}
+.avatar__img.is-active { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .avatar__img { transition: none; }
+  .avatar__img:not(.is-active) { display: none; }
+}
 .hero__role {
   font-family: var(--ff-mono); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--text-secondary); margin-bottom: 26px;
@@ -373,6 +389,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .rost__h { font-size: 16px; font-weight: 500; color: var(--text-display); letter-spacing: -0.01em; }
 .rost__m { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.03em; color: var(--text-secondary); margin-top: 8px; line-height: 1.5; }
 @media (max-width: 720px) { .roster { grid-template-columns: 1fr; } }
+
+/* Case with a real Ads Manager screenshot (stacked: narrative on top, shot below) */
+.case__body.is-shot { display: block; }
+.case__body.is-shot .case__narrative {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 32px;
+  border-right: none; border-bottom: 1px solid var(--line);
+}
+.case__body.is-shot .cn-row { margin-bottom: 0; }
+.shot { padding: 22px 24px; }
+.browser__img { display: block; }
+.browser__img img { width: 100%; height: auto; display: block; }
+.shot__cap { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.05em; color: var(--text-secondary); margin-top: 12px; }
+@media (max-width: 720px) { .case__body.is-shot .case__narrative { grid-template-columns: 1fr; } }
 
 /* ================================================================
    AI WORKFLOW
@@ -524,6 +553,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    RESPONSIVE
    ================================================================ */
 @media (max-width: 900px) {
+  .hero__inner { grid-template-columns: 1fr; gap: 24px; }
+  .hero__media { order: -1; justify-content: flex-start; }
+  .avatar { max-width: 220px; margin-inline: 0; }
   .about__grid { grid-template-columns: 1fr; }
   .case__body { grid-template-columns: 1fr; }
   .case__narrative { border-right: none; border-bottom: 1px solid var(--line); }
