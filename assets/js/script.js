@@ -146,7 +146,34 @@
   io.observe(contact);
 })();
 
-/* ---------- Hero avatar crossfade (every 2s) ---------- */
+/* ---------- Scroll progress bar ---------- */
+(function scrollBar() {
+  const bar = document.querySelector('[data-scrollbar]');
+  if (!bar) return;
+  let ticking = false;
+  const update = () => {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
+    bar.style.width = pct + '%';
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  update();
+})();
+
+/* ---------- Stagger index for grid children ---------- */
+(function staggerIndex() {
+  document.querySelectorAll('.stagger').forEach((grid) => {
+    Array.prototype.forEach.call(grid.children, (child, i) => {
+      child.style.setProperty('--i', i);
+    });
+  });
+})();
+
+/* ---------- Hero avatar pixel transition (every 2s) ---------- */
 (function avatarRotate() {
   const box = document.querySelector('[data-avatar]');
   if (!box) return;
