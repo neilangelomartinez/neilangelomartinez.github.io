@@ -367,6 +367,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .tbl tfoot td { color: var(--text-primary); border-top: 1px solid var(--line-strong); font-weight: 700; }
 .tbl .win td:first-child::before { content: "▸ "; color: var(--accent); }
 
+/* "Also worked with" roster */
+.roster { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-med); }
+.rost { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
+.rost__h { font-size: 16px; font-weight: 500; color: var(--text-display); letter-spacing: -0.01em; }
+.rost__m { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.03em; color: var(--text-secondary); margin-top: 8px; line-height: 1.5; }
+@media (max-width: 720px) { .roster { grid-template-columns: 1fr; } }
+
 /* ================================================================
    AI WORKFLOW
    ================================================================ */
