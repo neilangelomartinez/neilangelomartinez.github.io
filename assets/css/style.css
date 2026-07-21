@@ -435,15 +435,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .ai__lead { max-width: 60ch; color: var(--text-secondary); font-size: clamp(16px, 1.9vw, 20px); margin-bottom: var(--s-wide); }
 .ai__lead b { color: var(--text-display); font-weight: 500; }
 
-.ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-med); }
+.ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-med); align-items: start; }
 .ai-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
 .ai-card__k { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 .ai-card__h { font-size: 21px; font-weight: 500; color: var(--text-display); margin: 10px 0 8px; letter-spacing: -0.01em; }
 .ai-card__p { color: var(--text-secondary); font-size: 15px; }
 .ai-card__tools { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
 
-/* Ad creative showcase (small swipeable carousel, right-aligned) */
-.adshow { margin: 24px 0 0 auto; max-width: 280px; }
+/* Ad creative showcase (small swipeable carousel, sits beside the AI Ad Creative card) */
+.adshow { margin-left: auto; max-width: 280px; }
 .adshow__label {
   font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--label-color); margin-bottom: 12px; text-align: right;
