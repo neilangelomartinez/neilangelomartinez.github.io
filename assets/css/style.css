@@ -518,11 +518,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .skillset__k span { color: var(--text-disabled); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
+  display: inline-flex; align-items: center; gap: 6px;
   font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.03em;
   color: var(--text-primary);
   border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 13px;
   transition: border-color var(--tr), color var(--tr);
 }
+.chip svg { flex: none; }
 .chip:hover { border-color: var(--accent); }
 .chip--ai { border-color: var(--accent-dim); color: var(--accent); }
 
