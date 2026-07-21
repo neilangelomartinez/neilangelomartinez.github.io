@@ -366,11 +366,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .about__body p { color: var(--text-secondary); margin-bottom: 16px; font-size: 16px; }
 .about__meta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
 .tag {
+  display: inline-flex; align-items: center; gap: 6px;
   font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--text-secondary);
   border: 1px solid var(--line); border-radius: var(--radius);
   padding: 7px 12px;
 }
+.tag svg { flex: none; }
 
 /* ================================================================
    CASE STUDIES — Ads Manager Terminal + KPI
@@ -529,7 +531,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .certs { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-med); }
 .cert { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
 .cert__n { font-family: var(--ff-mono); font-size: 11px; color: var(--text-disabled); }
-.cert__h { font-size: 15px; font-weight: 500; color: var(--text-primary); margin-top: 12px; line-height: 1.35; }
+.cert__h { font-size: 15px; font-weight: 500; color: var(--text-primary); margin-top: 12px; line-height: 1.35; display: flex; align-items: center; gap: 8px; }
+.cert__icon { flex: none; color: var(--text-secondary); }
 .cert__by { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--label-color); margin-top: 10px; }
 
 /* ================================================================
