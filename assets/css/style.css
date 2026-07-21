@@ -12,6 +12,7 @@
   color-scheme: dark;
 
   --bg: #000000;
+  --bg-alt: #0b0e14;
   --bg-elev: rgba(255, 255, 255, 0.03);
 
   --text-display: rgba(255, 255, 255, 1);
@@ -51,6 +52,7 @@
   color-scheme: light;
 
   --bg: #f4f1ec;              /* warm off-white */
+  --bg-alt: #eef1f7;          /* cool-tinted alt band, ties to the blue accent */
   --bg-elev: rgba(10, 10, 10, 0.02);
 
   --text-display: #0a0a0a;
@@ -98,6 +100,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ---------- Helpers ---------- */
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: clamp(20px, 5vw, 48px); }
 .section { padding-block: var(--s-vast); position: relative; scroll-margin-top: 76px; }
+.band-alt { background: var(--bg-alt); }
 .mono { font-family: var(--ff-mono); }
 .accent { color: var(--accent); }
 
@@ -411,13 +414,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .tbl tfoot td { color: var(--text-primary); border-top: 1px solid var(--line-strong); font-weight: 700; }
 .tbl .win td:first-child::before { content: "▸ "; color: var(--accent); }
 
-/* "Also worked with" roster */
-.roster { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-med); }
-.rost { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
-.rost__h { font-size: 16px; font-weight: 500; color: var(--text-display); letter-spacing: -0.01em; }
-.rost__m { font-family: var(--ff-mono); font-size: 13px; letter-spacing: 0.03em; color: var(--label-color); margin-top: 8px; line-height: 1.5; }
-@media (max-width: 720px) { .roster { grid-template-columns: 1fr; } }
-
 /* Case with a real Ads Manager screenshot (stacked: narrative on top, shot below) */
 .case__body.is-shot { display: block; }
 .case__body.is-shot .case__narrative {
@@ -531,6 +527,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ================================================================
    EXPERIENCE TIMELINE
    ================================================================ */
+.xp-group-label {
+  font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--label-color);
+  padding-top: 18px;
+}
+.xp-group-label--past { margin-top: var(--s-wide); border-top: 1px solid var(--line); }
 .xp { display: grid; grid-template-columns: 160px 1fr; gap: var(--s-wide); padding: 26px 0; border-top: 1px solid var(--line); }
 .xp:last-child { border-bottom: 1px solid var(--line); }
 .xp__when { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--text-secondary); }
