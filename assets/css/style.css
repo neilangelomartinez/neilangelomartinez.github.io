@@ -505,7 +505,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
 }
 .svc__n { font-family: var(--ff-mono); font-size: 11px; color: var(--label-color); letter-spacing: 0.1em; }
-.svc__h { font-size: 18px; font-weight: 500; color: var(--text-display); margin: 12px 0 8px; }
+.svc__h { font-size: 18px; font-weight: 500; color: var(--text-display); margin: 12px 0 8px; display: flex; align-items: center; gap: 10px; }
+.svc__icon { flex: none; color: var(--text-secondary); }
 .svc__p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
 
 /* ================================================================
