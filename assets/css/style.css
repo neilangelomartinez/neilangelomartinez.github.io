@@ -23,8 +23,9 @@
   --line-strong: rgba(255, 255, 255, 0.28);
 
   /* Accent — the ONLY color. Used on values, never backgrounds. */
-  --accent: #d71921;
-  --accent-dim: rgba(215, 25, 33, 0.14);
+  --accent: #2563eb;
+  --accent-dim: rgba(37, 99, 235, 0.14);
+  --label-color: rgba(147, 181, 255, 0.82);
 
   --dot: rgba(255, 255, 255, 0.10);
 
@@ -60,8 +61,9 @@
   --line: rgba(10, 10, 10, 0.14);
   --line-strong: rgba(10, 10, 10, 0.30);
 
-  --accent: #d71921;
-  --accent-dim: rgba(215, 25, 33, 0.10);
+  --accent: #2563eb;
+  --accent-dim: rgba(37, 99, 235, 0.10);
+  --label-color: rgba(28, 56, 110, 0.78);
 
   --dot: rgba(10, 10, 10, 0.12);
 }
