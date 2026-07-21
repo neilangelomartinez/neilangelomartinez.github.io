@@ -535,6 +535,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .xp:last-child { border-bottom: 1px solid var(--line); }
 .xp__when { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--text-secondary); }
 .xp__when b { color: var(--accent); font-weight: 400; display: block; font-size: 13px; }
+.xp__title { display: flex; align-items: center; gap: 10px; }
+.xp__icon { flex: none; color: var(--text-secondary); }
 .xp__role { font-size: clamp(19px, 2.4vw, 24px); font-weight: 500; color: var(--text-display); letter-spacing: -0.01em; }
 .xp__co { font-family: var(--ff-mono); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--label-color); margin: 4px 0 14px; }
 .xp__pts { display: grid; gap: 9px; }
