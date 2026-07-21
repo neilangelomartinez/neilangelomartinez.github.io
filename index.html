@@ -31,11 +31,8 @@
 <body>
 <!-- =====================================================================
      ASSET SWAP GUIDE (placeholders → real work, no layout changes)
-     · AI ad creatives .......  replace <div class="adunit__creative"> inner
-                                placeholder with <img src="./assets/images/..">
-     · Landing page preview ..  replace <div class="browser__view"> inner
-                                placeholder with a screenshot <img> and set the
-                                real URL on the "VIEW LIVE" link (data-live).
+     · AI ad creatives .......  done — .adunit__creative uses a real Gifty PH
+                                ad (assets/images/ad-giftyph.jpg).
      · Ad account screenshots   drop into a case study's .terminal (swap the
                                 <table> for an <img> in a .browser frame).
      All figures below are Neil's real reported numbers.
@@ -304,62 +301,33 @@
           </div>
         </div>
 
-        <!-- Prompt -> Output -->
-        <div class="p2o reveal">
-          <div class="p2o__prompt">
-            <span class="lbl">Prompt → Nano Banana Pro</span>
-            <span class="caret">&gt;</span> Studio product shot on wet stone, soft morning light,
-            minimal empty space, 4:5, photoreal. Make a 6-variation set for cold-audience testing.
+        <!-- Ad creative showcase (swipeable carousel of real AI-made ads) -->
+        <div class="adshow reveal">
+          <p class="adshow__label">Real ad creative, AI-made</p>
+          <div class="adshow__track" data-adshow>
+            <figure class="adshow__slide">
+              <img src="./assets/images/ad-giftyph.jpg" alt="Gifty PH ad creative: a personalized song gift" loading="lazy" style="object-position: 50% 25%;" />
+              <figcaption>Gifty PH — personalized gift ad</figcaption>
+            </figure>
+            <figure class="adshow__slide">
+              <img src="./assets/images/ad-purest-1.jpg" alt="The Purest Solutions ad creative: SPF and skin tint, before/after" loading="lazy" />
+              <figcaption>The Purest Solutions — before/after</figcaption>
+            </figure>
+            <figure class="adshow__slide">
+              <img src="./assets/images/ad-purest-2.jpg" alt="The Purest Solutions ad creative: SPF for oily skin, benefits list" loading="lazy" />
+              <figcaption>The Purest Solutions — benefits list</figcaption>
+            </figure>
+            <figure class="adshow__slide">
+              <img src="./assets/images/ad-sbg.jpg" alt="Salveo Barley Grass ad creative: SBG On the Go product highlight" loading="lazy" />
+              <figcaption>SBG On the Go — product highlight</figcaption>
+            </figure>
           </div>
-          <div class="p2o__arrow">→</div>
-          <!-- Mock FB/IG ad unit - swap .adunit__creative placeholder for a real <img> -->
-          <div class="adunit">
-            <div class="adunit__top">
-              <div class="adunit__avatar">B</div>
-              <div class="adunit__meta">
-                <b>Your Brand</b>
-                <span>Sponsored</span>
-              </div>
-            </div>
-            <div class="adunit__creative"><span class="ph">AI creative // 4:5</span></div>
-            <div class="adunit__cta">
-              <small>Clinically-backed glow, on sale today</small>
-              <span class="adunit__btn">Shop now</span>
-            </div>
-          </div>
+          <div class="adshow__dots" data-adshow-dots></div>
         </div>
 
-        <!-- Landing page + funnel -->
-        <div class="lp-grid reveal">
-          <!-- Browser frame - swap .browser__view placeholder for a screenshot, set real URL on VIEW LIVE -->
-          <div class="browser">
-            <div class="browser__bar">
-              <span class="d"></span><span class="d"></span><span class="d"></span>
-              <span class="browser__url">yourbrand.com/lp/summer-offer</span>
-            </div>
-            <div class="browser__view"><span class="ph">Landing page preview // Manus + Claude Code</span></div>
-            <div class="browser__foot">
-              <small>Built in ~3 hrs with AI</small>
-              <a href="#" data-live target="_blank" rel="noopener">View live ↗</a>
-            </div>
-          </div>
-
-          <div class="funnel">
-            <p class="funnel__k">Full-funnel view</p>
-            <div class="funnel__step">
-              <span class="funnel__n">01</span>
-              <div class="funnel__t"><b>AI ad creative</b><span>Concept and copy made, then tested</span></div>
-            </div>
-            <div class="funnel__step">
-              <span class="funnel__n">02</span>
-              <div class="funnel__t"><b>AI landing page</b><span>Matches the ad, built to sell</span></div>
-            </div>
-            <div class="funnel__step funnel__step--result">
-              <span class="funnel__n">03</span>
-              <div class="funnel__t"><b>1.97x ROAS</b><span>blended across 14 HK markets</span></div>
-            </div>
-          </div>
-        </div>
+        <p class="reveal" style="margin-top: var(--s-wide); color: var(--text-secondary); font-size: 16px; max-width: 60ch;">
+          I build matching landing pages with this same AI workflow — happy to walk through a live example on request.
+        </p>
       </div>
     </section>
 

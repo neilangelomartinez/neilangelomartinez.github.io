@@ -440,57 +440,35 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .ai-card__p { color: var(--text-secondary); font-size: 15px; }
 .ai-card__tools { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
 
-/* Prompt -> Output */
-.p2o { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: start; margin-top: 20px; }
-.p2o__prompt {
-  font-family: var(--ff-mono); font-size: 12.5px; line-height: 1.6; color: var(--text-secondary);
-  border: 1px dashed var(--line-strong); border-radius: var(--radius); padding: 16px; background: var(--bg-elev);
+/* Ad creative showcase (small swipeable carousel, right-aligned) */
+.adshow { margin: 24px 0 0 auto; max-width: 280px; }
+.adshow__label {
+  font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--label-color); margin-bottom: 12px; text-align: right;
 }
-.p2o__prompt .lbl { color: var(--text-disabled); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; display: block; margin-bottom: 10px; }
-.p2o__prompt .caret { color: var(--accent); }
-.p2o__arrow { display: grid; place-items: center; align-self: center; color: var(--accent); font-family: var(--ff-mono); font-size: 22px; }
-
-/* Mock FB/IG ad unit */
-.adunit { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.adunit__top { display: flex; align-items: center; gap: 10px; padding: 12px 14px; }
-.adunit__avatar { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line-strong); display: grid; place-items: center; font-family: var(--ff-mono); font-size: 13px; color: var(--text-secondary); flex: none; }
-.adunit__meta b { display: block; font-size: 13px; color: var(--text-display); font-weight: 500; }
-.adunit__meta span { font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-disabled); }
-.adunit__creative {
-  aspect-ratio: 1 / 1; border-block: 1px solid var(--line);
-  display: grid; place-items: center; text-align: center;
-  background-image: radial-gradient(var(--dot) 1px, transparent 1px); background-size: 16px 16px;
+.adshow__track {
+  display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none; border-radius: var(--radius);
 }
-.adunit__creative .ph { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-disabled); }
-.adunit__cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; }
-.adunit__cta small { font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); }
-.adunit__btn { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 8px 14px; color: var(--text-primary); }
+.adshow__track::-webkit-scrollbar { display: none; }
+.adshow__slide {
+  flex: 0 0 100%; scroll-snap-align: center;
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+}
+.adshow__slide img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+.adshow__slide figcaption {
+  font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.03em; color: var(--text-secondary);
+  padding: 10px 12px; border-top: 1px solid var(--line);
+}
+.adshow__dots { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+.adshow__dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--line-strong); transition: background var(--tr); }
+.adshow__dots span.is-active { background: var(--accent); }
 
-/* Browser frame (landing pages) */
-.lp-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--s-med); margin-top: 20px; }
+/* Browser frame (used by case study screenshots) */
 .browser { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .browser__bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
 .browser__bar .d { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--line-strong); }
 .browser__url { margin-left: 8px; font-family: var(--ff-mono); font-size: 11px; color: var(--text-disabled); letter-spacing: 0.04em; }
-.browser__view {
-  aspect-ratio: 16 / 10;
-  display: grid; place-items: center; text-align: center;
-  background-image: radial-gradient(var(--dot) 1px, transparent 1px); background-size: 18px 18px;
-}
-.browser__view .ph { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-disabled); }
-.browser__foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-top: 1px solid var(--line); }
-.browser__foot small { font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
-.browser__foot a { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); display: inline-flex; gap: 6px; }
-
-/* Full-funnel pairing */
-.funnel { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 4px; }
-.funnel__k { font-family: var(--ff-mono); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label-color); margin-bottom: 12px; }
-.funnel__step { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-.funnel__step:last-child { border-bottom: none; }
-.funnel__n { font-family: var(--ff-mono); font-size: 11px; color: var(--text-disabled); flex: none; width: 24px; }
-.funnel__t b { display: block; font-size: 15px; color: var(--text-display); font-weight: 500; }
-.funnel__t span { font-size: 13px; color: var(--text-secondary); }
-.funnel__step--result .funnel__t b { color: var(--accent); font-family: var(--ff-display); font-size: 22px; }
 
 /* ================================================================
    SERVICES
@@ -595,9 +573,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .about__grid { grid-template-columns: 1fr; }
   .case__body { grid-template-columns: 1fr; }
   .case__narrative { border-right: none; border-bottom: 1px solid var(--line); }
-  .ai-grid, .lp-grid, .skills-grid { grid-template-columns: 1fr; }
-  .p2o { grid-template-columns: 1fr; }
-  .p2o__arrow { transform: rotate(90deg); padding: 4px 0; }
+  .ai-grid, .skills-grid { grid-template-columns: 1fr; }
+  .adshow { margin: 24px auto 0; max-width: 220px; }
   .svc-grid { grid-template-columns: 1fr 1fr; }
   .certs { grid-template-columns: 1fr 1fr; }
   .proof__grid { grid-template-columns: 1fr 1fr; }

@@ -193,3 +193,28 @@
   const y = document.querySelector('[data-year]');
   if (y) y.textContent = new Date().getFullYear();
 })();
+
+/* ---------- Ad showcase carousel dots ---------- */
+(function adShowcase() {
+  const track = document.querySelector('[data-adshow]');
+  const dotsWrap = document.querySelector('[data-adshow-dots]');
+  if (!track || !dotsWrap) return;
+
+  const slides = Array.from(track.querySelectorAll('.adshow__slide'));
+  slides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('is-active');
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.querySelectorAll('span'));
+  if (!('IntersectionObserver' in window)) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const i = slides.indexOf(entry.target);
+      dots.forEach((d, di) => d.classList.toggle('is-active', di === i));
+    });
+  }, { root: track, threshold: 0.6 });
+  slides.forEach((s) => io.observe(s));
+})();
