@@ -131,7 +131,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .section-idx {
   font-family: var(--ff-mono);
   font-size: 12px;
-  color: var(--text-disabled);
+  color: var(--label-color);
   letter-spacing: 0.1em;
 }
 
@@ -212,7 +212,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .status-pill {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text-secondary);
+  color: var(--label-color);
   border: 1px solid var(--line); border-radius: var(--radius-pill);
   padding: 6px 12px;
 }
@@ -281,8 +281,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .stagger > * { opacity: 1; transform: none; transition: none; }
 }
 .hero__role {
-  font-family: var(--ff-mono); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--text-secondary); margin-bottom: 16px;
+  font-family: var(--ff-mono); font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--label-color); margin-bottom: 16px;
   display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
 }
 .hero__role span { color: var(--accent); }
@@ -346,8 +346,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .kpi__num .u { color: var(--accent); }
 .kpi__label {
   margin-top: 12px;
-  font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--text-secondary);
+  font-family: var(--ff-mono); font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--label-color);
 }
 
 /* ================================================================
@@ -379,7 +379,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-bottom: 1px solid var(--line);
 }
 .case__title { font-size: clamp(19px, 2.4vw, 26px); font-weight: 500; color: var(--text-display); letter-spacing: -0.01em; }
-.case__tagline { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); margin-top: 6px; }
+.case__tagline { font-family: var(--ff-mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--label-color); margin-top: 6px; }
 .case__badge {
   font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--text-secondary); border: 1px solid var(--line); border-radius: var(--radius-pill); padding: 6px 12px; white-space: nowrap;
@@ -389,7 +389,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .case__narrative { padding: 24px; border-right: 1px solid var(--line); }
 .cn-row { margin-bottom: 20px; }
 .cn-row:last-child { margin-bottom: 0; }
-.cn-row dt { font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-disabled); margin-bottom: 6px; }
+.cn-row dt { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--label-color); margin-bottom: 6px; }
 .cn-row dd { color: var(--text-secondary); font-size: 15px; line-height: 1.55; }
 .cn-row--result dd { color: var(--text-primary); }
 
@@ -415,7 +415,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .roster { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-med); }
 .rost { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
 .rost__h { font-size: 16px; font-weight: 500; color: var(--text-display); letter-spacing: -0.01em; }
-.rost__m { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.03em; color: var(--text-secondary); margin-top: 8px; line-height: 1.5; }
+.rost__m { font-family: var(--ff-mono); font-size: 13px; letter-spacing: 0.03em; color: var(--label-color); margin-top: 8px; line-height: 1.5; }
 @media (max-width: 720px) { .roster { grid-template-columns: 1fr; } }
 
 /* Case with a real Ads Manager screenshot (stacked: narrative on top, shot below) */
@@ -488,7 +488,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* Full-funnel pairing */
 .funnel { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 4px; }
-.funnel__k { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; }
+.funnel__k { font-family: var(--ff-mono); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label-color); margin-bottom: 12px; }
 .funnel__step { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .funnel__step:last-child { border-bottom: none; }
 .funnel__n { font-family: var(--ff-mono); font-size: 11px; color: var(--text-disabled); flex: none; width: 24px; }
@@ -504,7 +504,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 26px 24px;
   border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
 }
-.svc__n { font-family: var(--ff-mono); font-size: 11px; color: var(--text-disabled); letter-spacing: 0.1em; }
+.svc__n { font-family: var(--ff-mono); font-size: 11px; color: var(--label-color); letter-spacing: 0.1em; }
 .svc__h { font-size: 18px; font-weight: 500; color: var(--text-display); margin: 12px 0 8px; }
 .svc__p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
 
@@ -533,7 +533,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .xp__when { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--text-secondary); }
 .xp__when b { color: var(--accent); font-weight: 400; display: block; font-size: 13px; }
 .xp__role { font-size: clamp(19px, 2.4vw, 24px); font-weight: 500; color: var(--text-display); letter-spacing: -0.01em; }
-.xp__co { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin: 4px 0 14px; }
+.xp__co { font-family: var(--ff-mono); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--label-color); margin: 4px 0 14px; }
 .xp__pts { display: grid; gap: 9px; }
 .xp__pts li { position: relative; padding-left: 20px; color: var(--text-secondary); font-size: 15px; line-height: 1.5; }
 .xp__pts li::before { content: "›"; position: absolute; left: 0; color: var(--accent); }
@@ -545,7 +545,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .cert { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
 .cert__n { font-family: var(--ff-mono); font-size: 11px; color: var(--text-disabled); }
 .cert__h { font-size: 15px; font-weight: 500; color: var(--text-primary); margin-top: 12px; line-height: 1.35; }
-.cert__by { font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-top: 10px; }
+.cert__by { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--label-color); margin-top: 10px; }
 
 /* ================================================================
    CONTACT / FOOTER
