@@ -681,10 +681,10 @@ Replace with:
 - [ ] **Step 4: Verify**
 
 Run: `grep -o 'aria-hidden="true"' index.html | wc -l`
-Expected: `33` (6 from Task 3 + 21 from Task 4 + 6 from this task — every icon
-this plan adds carries `aria-hidden="true"`; the pre-existing nav
-sun/moon/burger icons don't use that attribute, so this count is exactly the
-icons introduced by this plan so far).
+Expected: `34` (6 from Task 3 + 21 from Task 4 + 6 from this task + 1
+pre-existing — the `.hero__media` div already carried `aria-hidden="true"`
+before this plan touched anything; the nav sun/moon/burger icons don't use
+that attribute, so the rest is exactly the icons this plan has added so far).
 
 - [ ] **Step 5: Commit**
 
@@ -831,7 +831,8 @@ Expected: `2`
 - [ ] **Step 2b: Confirm the full icon count added by this plan**
 
 Run: `grep -o 'aria-hidden="true"' index.html | wc -l`
-Expected: `38` (6 services + 21 chips + 6 footer/contact + 5 experience)
+Expected: `39` (6 services + 21 chips + 6 footer/contact + 5 experience + 1
+pre-existing on `.hero__media`, unrelated to this plan)
 
 - [ ] **Step 3: Sanity-check the HTML isn't obviously broken**
 

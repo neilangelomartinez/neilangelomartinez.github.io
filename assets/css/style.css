@@ -563,7 +563,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .contact__sub { margin-top: 22px; max-width: 46ch; color: var(--text-secondary); font-size: 17px; }
 .contact__cta { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; }
 .contact__list { margin-top: var(--s-wide); display: flex; flex-wrap: wrap; gap: 28px; }
-.contact__list a, .contact__list span { font-family: var(--ff-mono); font-size: 13px; color: var(--text-secondary); letter-spacing: 0.03em; }
+.contact__list a, .contact__list span { display: inline-flex; align-items: center; gap: 6px; font-family: var(--ff-mono); font-size: 13px; color: var(--text-secondary); letter-spacing: 0.03em; }
 .contact__list a:hover { color: var(--accent); }
 
 .footer {
@@ -573,7 +573,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .footer p { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--text-disabled); text-transform: uppercase; }
 .footer .socials { display: flex; gap: 20px; }
-.footer .socials a { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+.footer .socials a { display: inline-flex; align-items: center; gap: 6px; font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
 .footer .socials a:hover { color: var(--accent); }
 
 /* ---------- Reveal-on-scroll ---------- */
