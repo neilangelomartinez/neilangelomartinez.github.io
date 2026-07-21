@@ -12,7 +12,7 @@
   color-scheme: dark;
 
   --bg: #000000;
-  --bg-alt: #0b0e14;
+  --bg-alt: #121826;
   --bg-elev: rgba(255, 255, 255, 0.03);
 
   --text-display: rgba(255, 255, 255, 1);
@@ -52,7 +52,7 @@
   color-scheme: light;
 
   --bg: #f4f1ec;              /* warm off-white */
-  --bg-alt: #eef1f7;          /* cool-tinted alt band, ties to the blue accent */
+  --bg-alt: #e3e9f7;          /* cool-tinted alt band, ties to the blue accent */
   --bg-elev: rgba(10, 10, 10, 0.02);
 
   --text-display: #0a0a0a;
