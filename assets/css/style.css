@@ -618,8 +618,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .xp { grid-template-columns: 1fr; gap: 12px; }
   .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .section { padding-block: 64px; }
-  .case__head { padding: 18px 18px; }
-  .case__narrative, .terminal, .shot { padding: 18px; }
   .shot__cap { font-size: 10px; }
 }
 
