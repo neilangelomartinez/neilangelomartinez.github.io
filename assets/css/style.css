@@ -449,6 +449,55 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ================================================================
+   PROCESS
+   ================================================================ */
+.process {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.pstep { background: var(--surface); padding: 22px 18px; }
+.pstep__n {
+  font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.1em;
+  color: var(--accent);
+}
+.pstep__h {
+  font-size: 15px; font-weight: 700; letter-spacing: -0.01em;
+  color: var(--text-display); margin: 10px 0 8px;
+}
+.pstep__p { font-size: 13px; line-height: 1.5; color: var(--text-secondary); }
+
+@media (max-width: 1024px) { .process { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 720px)  { .process { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px)  { .process { grid-template-columns: 1fr; } }
+
+/* ================================================================
+   HOW I THINK
+   ================================================================ */
+.principles { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-med); }
+.principle {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 26px 28px;
+  transition: box-shadow var(--tr), transform var(--tr);
+}
+.principle:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.principle__h {
+  font-size: 19px; font-weight: 700; letter-spacing: -0.015em;
+  color: var(--text-display); margin-bottom: 10px;
+}
+.principle__p { color: var(--text-secondary); font-size: 15px; line-height: 1.55; }
+
+@media (max-width: 720px) {
+  .principles { grid-template-columns: 1fr; }
+  .principle:hover { transform: none; }
+}
+
+/* ================================================================
    AI WORKFLOW
    ================================================================ */
 .ai__lead { max-width: 60ch; color: var(--text-secondary); font-size: clamp(16px, 1.9vw, 20px); margin-bottom: var(--s-wide); }
