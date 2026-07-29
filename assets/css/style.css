@@ -238,38 +238,66 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ================================================================
    HERO
    ================================================================ */
-.hero { position: relative; min-height: 100svh; display: flex; align-items: center; padding-top: 76px; padding-bottom: 30px; overflow: hidden; }
-.hero__inner { position: relative; z-index: 1; width: 100%; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: var(--s-wide); align-items: center; }
-
-/* Hero avatar (crossfading portraits) */
-.hero__media { position: relative; display: flex; justify-content: center; align-items: flex-end; }
-.avatar { position: relative; height: min(58svh, 520px); aspect-ratio: 600 / 895; width: auto; max-width: 100%; margin-inline: auto; }
-/* Dot-matrix "pixel" materialize transition between avatars. */
-@property --mp { syntax: "<length-percentage>"; inherits: false; initial-value: 105%; }
-.avatar__img {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: contain; object-position: bottom center;
-  opacity: 0; --mp: 105%;
-  transition: opacity 0.35s ease;
-  -webkit-mask-image:
-    radial-gradient(circle at center, #000 var(--mp), transparent calc(var(--mp) + 3%)),
-    linear-gradient(to bottom, #000 84%, transparent 100%);
-          mask-image:
-    radial-gradient(circle at center, #000 var(--mp), transparent calc(var(--mp) + 3%)),
-    linear-gradient(to bottom, #000 84%, transparent 100%);
-  -webkit-mask-size: 11px 11px, 100% 100%;
-          mask-size: 11px 11px, 100% 100%;
-  -webkit-mask-repeat: repeat, no-repeat;
-          mask-repeat: repeat, no-repeat;
-  -webkit-mask-composite: source-in;
-          mask-composite: intersect;
+.hero {
+  position: relative;
+  padding-top: 148px;
+  padding-bottom: var(--s-vast);
 }
-.avatar__img.is-active { opacity: 1; animation: pixelIn 0.6s steps(8, end) both; }
-@keyframes pixelIn { from { --mp: 0%; } to { --mp: 105%; } }
-@media (prefers-reduced-motion: reduce) {
-  .avatar__img { transition: none; --mp: 105%; }
-  .avatar__img.is-active { animation: none; }
-  .avatar__img:not(.is-active) { display: none; }
+.hero__inner { width: 100%; }
+
+.hero__eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.hero__title {
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: var(--text-display);
+  max-width: 18ch;
+}
+.hero__sub {
+  margin-top: 22px;
+  max-width: 62ch;
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.hero__cta { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* KPI cards — these are meant to dominate the first screen. */
+.kpi-grid {
+  margin-top: var(--s-vast);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--s-med);
+}
+.kpi {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 24px 20px;
+  transition: box-shadow var(--tr), transform var(--tr);
+}
+.kpi:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.kpi__num {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-display);
+  font-variant-numeric: tabular-nums;
+}
+.kpi__num .u { color: var(--accent); }
+.kpi__label {
+  margin-top: 10px;
+  font-family: var(--ff-mono);
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-secondary);
 }
 
 /* Scroll progress bar */
@@ -281,75 +309,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .stagger.in > * { opacity: 1; transform: none; transition-delay: calc(var(--i, 0) * 55ms); }
 @media (prefers-reduced-motion: reduce) {
   .stagger > * { opacity: 1; transform: none; transition: none; }
-}
-.hero__role {
-  font-family: var(--ff-mono); font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--label-color); margin-bottom: 16px;
-  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-}
-.hero__role span { color: var(--accent); }
-.hero__role .sep { color: var(--text-disabled); }
-
-.hero h1 {
-  font-size: clamp(32px, 4.6vw, 60px);
-  line-height: 1.0;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  color: var(--text-display);
-  max-width: 15ch;
-}
-.hero h1 .amp { font-family: var(--ff-display); color: var(--accent); font-weight: 400; }
-
-.hero__sub {
-  margin-top: 20px;
-  max-width: 50ch;
-  font-size: clamp(15px, 1.7vw, 18px);
-  color: var(--text-secondary);
-  line-height: 1.55;
-}
-.hero__cta { margin-top: 22px; display: flex; gap: 14px; flex-wrap: wrap; }
-
-.hero__figure {
-  margin-top: 18px;
-  border-top: 1px solid var(--line);
-  padding-top: 18px;
-  display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap;
-}
-.hero__bignum {
-  font-family: var(--ff-display);
-  font-size: clamp(46px, 8vw, 96px);
-  line-height: 0.82;
-  color: var(--accent);
-  font-weight: 500;
-  letter-spacing: 0.01em;
-}
-.hero__bignum-cap {
-  font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--text-secondary); max-width: 22ch; line-height: 1.5;
-}
-
-/* ================================================================
-   PROOF BAR  (animated KPI counters)
-   ================================================================ */
-.proof { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.proof__grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-}
-.kpi {
-  padding: 34px clamp(16px, 3vw, 34px);
-  border-left: 1px solid var(--line);
-}
-.kpi:first-child { border-left: none; }
-.kpi__num {
-  font-family: var(--ff-display);
-  font-size: clamp(30px, 4.6vw, 52px);
-  line-height: 1; color: var(--text-display); font-weight: 500;
-}
-.kpi__num .u { color: var(--accent); }
-.kpi__label {
-  margin-top: 12px;
-  font-family: var(--ff-mono); font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--label-color);
+  .kpi:hover { transform: none; }
 }
 
 /* ================================================================
