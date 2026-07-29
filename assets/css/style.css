@@ -346,59 +346,107 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .tag svg { flex: none; }
 
 /* ================================================================
-   CASE STUDIES — Ads Manager Terminal + KPI
+   CASE STUDIES
    ================================================================ */
-.case { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: var(--s-med); overflow: hidden; }
+.case {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--s-wide);
+  overflow: hidden;
+  transition: box-shadow var(--tr);
+}
+.case:hover { box-shadow: var(--shadow-md); }
+
 .case__head {
-  display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
-  padding: 20px 24px;
+  display: flex; flex-wrap: wrap; gap: 16px;
+  align-items: flex-start; justify-content: space-between;
+  padding: 26px 28px 22px;
   border-bottom: 1px solid var(--line);
 }
-.case__title { font-size: clamp(19px, 2.4vw, 26px); font-weight: 500; color: var(--text-display); letter-spacing: -0.01em; }
-.case__tagline { font-family: var(--ff-mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--label-color); margin-top: 6px; }
+.case__title {
+  font-size: clamp(20px, 2.4vw, 27px);
+  font-weight: 700; letter-spacing: -0.02em;
+  color: var(--text-display);
+}
+.case__overview {
+  font-family: var(--ff-mono); font-size: 12px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-secondary); margin-top: 8px;
+}
 .case__badge {
-  font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text-secondary); border: 1px solid var(--line); border-radius: var(--radius-pill); padding: 6px 12px; white-space: nowrap;
+  font-family: var(--ff-mono); font-size: 11px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft);
+  border-radius: var(--radius-pill);
+  padding: 7px 14px; white-space: nowrap;
 }
 
-.case__body { display: grid; grid-template-columns: 1fr 1.1fr; }
-.case__narrative { padding: 24px; border-right: 1px solid var(--line); }
-.cn-row { margin-bottom: 20px; }
-.cn-row:last-child { margin-bottom: 0; }
-.cn-row dt { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--label-color); margin-bottom: 6px; }
+/* Narrative: Challenge / Strategy / Execution */
+.case__narrative {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 22px 32px;
+  padding: 26px 28px;
+  border-bottom: 1px solid var(--line);
+}
+.cn-row dt {
+  font-family: var(--ff-mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-tertiary); margin-bottom: 8px;
+}
 .cn-row dd { color: var(--text-secondary); font-size: 15px; line-height: 1.55; }
-.cn-row--result dd { color: var(--text-primary); }
 
-/* Terminal */
-.terminal { padding: 20px 24px; background: var(--bg-elev); }
-.terminal__bar { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
-.terminal__bar .d { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--line-strong); }
-.terminal__bar .t { font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-disabled); margin-left: 6px; }
-.tbl { width: 100%; border-collapse: collapse; font-family: var(--ff-mono); font-size: 12.5px; }
-.tbl th {
-  text-align: right; font-weight: 400; color: var(--text-disabled);
-  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 7px 8px; border-bottom: 1px solid var(--line);
+/* Results — dashboard tiles, not prose */
+.metric-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border-bottom: 1px solid var(--line);
 }
-.tbl th:first-child, .tbl td:first-child { text-align: left; }
-.tbl td { text-align: right; padding: 9px 8px; color: var(--text-secondary); border-bottom: 1px solid var(--line); }
-.tbl tr:last-child td { border-bottom: none; }
-.tbl td.roas { color: var(--accent); }
-.tbl tfoot td { color: var(--text-primary); border-top: 1px solid var(--line-strong); font-weight: 700; }
-.tbl .win td:first-child::before { content: "▸ "; color: var(--accent); }
+.metric { background: var(--surface); padding: 20px 22px; }
+.metric__v {
+  font-size: clamp(20px, 2.1vw, 26px);
+  font-weight: 700; letter-spacing: -0.02em;
+  color: var(--text-display);
+  font-variant-numeric: tabular-nums;
+}
+.metric__v .sub { display: block; font-size: 12px; font-weight: 400; color: var(--text-tertiary); letter-spacing: 0.02em; margin-top: 2px; }
+.metric--win .metric__v { color: var(--accent); }
+.metric__k {
+  margin-top: 6px;
+  font-family: var(--ff-mono); font-size: 10.5px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-secondary);
+}
 
-/* Case with a real Ads Manager screenshot (stacked: narrative on top, shot below) */
-.case__body.is-shot { display: block; }
-.case__body.is-shot .case__narrative {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 32px;
-  border-right: none; border-bottom: 1px solid var(--line);
-}
-.case__body.is-shot .cn-row { margin-bottom: 0; }
-.shot { padding: 22px 24px; }
-.browser__img { display: block; }
+/* Screenshot + learning */
+.shot { padding: 24px 28px; }
+.browser__img { display: block; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--line); }
 .browser__img img { width: 100%; height: auto; display: block; }
-.shot__cap { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.05em; color: var(--text-secondary); margin-top: 12px; }
-@media (max-width: 720px) { .case__body.is-shot .case__narrative { grid-template-columns: 1fr; } }
+.shot__cap {
+  font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.03em;
+  color: var(--text-tertiary); margin-top: 12px;
+}
+.case__learning {
+  padding: 22px 28px 26px;
+  border-top: 1px solid var(--line);
+  background: var(--surface-2);
+}
+.case__learning dt {
+  font-family: var(--ff-mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 8px;
+}
+.case__learning dd { color: var(--text-primary); font-size: 15px; line-height: 1.55; max-width: 78ch; }
+
+@media (max-width: 900px) {
+  .case__narrative { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .case__head { padding: 20px; }
+  .case__narrative, .shot, .case__learning { padding: 20px; }
+}
 
 /* ================================================================
    AI WORKFLOW
