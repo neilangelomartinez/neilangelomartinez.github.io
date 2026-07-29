@@ -173,21 +173,6 @@
   });
 })();
 
-/* ---------- Hero avatar pixel transition (every 2s) ---------- */
-(function avatarRotate() {
-  const box = document.querySelector('[data-avatar]');
-  if (!box) return;
-  const imgs = box.querySelectorAll('.avatar__img');
-  if (imgs.length < 2) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  let i = 0;
-  setInterval(() => {
-    imgs[i].classList.remove('is-active');
-    i = (i + 1) % imgs.length;
-    imgs[i].classList.add('is-active');
-  }, 2000);
-})();
-
 /* ---------- Footer year ---------- */
 (function year() {
   const y = document.querySelector('[data-year]');

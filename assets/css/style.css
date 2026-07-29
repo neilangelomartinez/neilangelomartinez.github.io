@@ -322,6 +322,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--text-display); font-weight: 400;
 }
 .about__lead .accent { color: var(--accent); }
+.about__portrait { margin-top: var(--s-wide); width: 190px; max-width: 100%; }
 .about__body p { color: var(--text-secondary); margin-bottom: 16px; font-size: 16px; }
 .about__meta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
 .tag {
