@@ -242,10 +242,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    ================================================================ */
 .hero {
   position: relative;
-  padding-top: 148px;
+  padding-top: 132px;
   padding-bottom: var(--s-vast);
 }
-.hero__inner { width: 100%; }
+.hero__inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--s-wide);
+  align-items: center;
+}
+.hero__text { min-width: 0; }
+.hero__media { display: flex; justify-content: center; align-items: flex-end; }
+.hero__portrait { width: min(100%, 330px); height: auto; }
 
 .hero__eyebrow {
   font-family: var(--ff-mono);
@@ -272,7 +281,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* KPI cards — these are meant to dominate the first screen. */
 .kpi-grid {
-  margin-top: var(--s-vast);
+  grid-column: 1 / -1;
+  margin-top: var(--s-wide);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: var(--s-med);
@@ -324,7 +334,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--text-display); font-weight: 400;
 }
 .about__lead .accent { color: var(--accent); }
-.about__portrait { margin-top: var(--s-wide); width: 190px; max-width: 100%; }
 .about__body p { color: var(--text-secondary); margin-bottom: 16px; font-size: 16px; }
 .about__meta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
 .tag {
@@ -531,7 +540,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    RESPONSIVE
    ================================================================ */
 @media (max-width: 900px) {
-  .hero { padding-top: 116px; }
+  .hero { padding-top: 108px; }
+  .hero__inner { grid-template-columns: 1fr; gap: 24px; }
+  .hero__media { order: -1; justify-content: flex-start; }
+  .hero__portrait { width: 150px; }
   .kpi-grid { grid-template-columns: repeat(3, 1fr); }
   .about__grid { grid-template-columns: 1fr; }
   .case__body { grid-template-columns: 1fr; }
