@@ -10,8 +10,8 @@
   const root = document.documentElement;
   const KEY = 'nm-theme';
   const saved = localStorage.getItem(KEY);
-  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  const initial = saved || (prefersLight ? 'light' : 'dark');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initial = saved || (prefersDark ? 'dark' : 'light');
   root.setAttribute('data-theme', initial);
 
   document.addEventListener('click', (e) => {
