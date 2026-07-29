@@ -94,9 +94,9 @@ body {
   color: var(--text-primary);
   font-family: var(--ff-sans);
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.5;
   font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   transition: background var(--tr), color var(--tr);
@@ -111,7 +111,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ---------- Helpers ---------- */
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: clamp(20px, 5vw, 48px); }
 .section { padding-block: var(--s-vast); position: relative; scroll-margin-top: 76px; }
-.band-alt { background: var(--bg-alt); }
 .mono { font-family: var(--ff-mono); }
 .accent { color: var(--accent); }
 
@@ -135,10 +134,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .section-head { margin-bottom: var(--s-wide); }
 .section-head h2 {
-  font-size: clamp(28px, 4.4vw, 46px);
-  font-weight: 500;
+  font-size: clamp(30px, 4.6vw, 48px);
+  font-weight: 700;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: var(--text-display);
   margin-top: 14px;
 }
