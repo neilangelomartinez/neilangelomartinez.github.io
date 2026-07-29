@@ -180,7 +180,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: background var(--tr), border-color var(--tr);
 }
 .nav.scrolled {
-  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+          backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--line);
 }
 .nav__brand { font-family: var(--ff-mono); font-size: 14px; letter-spacing: 0.14em; color: var(--text-display); }
@@ -529,10 +531,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    RESPONSIVE
    ================================================================ */
 @media (max-width: 900px) {
-  .hero { min-height: auto; display: block; padding-top: 92px; padding-bottom: 48px; }
-  .hero__inner { grid-template-columns: 1fr; gap: 20px; }
-  .hero__media { order: -1; justify-content: flex-start; }
-  .avatar { height: auto; width: 152px; max-width: 152px; margin-inline: 0; }
+  .hero { padding-top: 116px; }
+  .kpi-grid { grid-template-columns: repeat(3, 1fr); }
   .about__grid { grid-template-columns: 1fr; }
   .case__body { grid-template-columns: 1fr; }
   .case__narrative { border-right: none; border-bottom: 1px solid var(--line); }
@@ -540,9 +540,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .adshow { margin: 24px auto 0; max-width: 220px; }
   .svc-grid { grid-template-columns: 1fr 1fr; }
   .certs { grid-template-columns: 1fr 1fr; }
-  .proof__grid { grid-template-columns: 1fr 1fr; }
-  .kpi:nth-child(3), .kpi:nth-child(4) { border-top: 1px solid var(--line); }
-  .kpi:nth-child(odd) { border-left: none; }
 }
 
 @media (max-width: 720px) {
@@ -559,8 +556,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   }
   .status-pill { display: none; }
   .xp { grid-template-columns: 1fr; gap: 12px; }
-  .hero__figure { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .section { padding-block: 58px; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .section { padding-block: 64px; }
   .case__head { padding: 18px 18px; }
   .case__narrative, .terminal, .shot { padding: 18px; }
   .shot__cap { font-size: 10px; }
@@ -568,5 +565,4 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 @media (max-width: 480px) {
   .svc-grid, .certs { grid-template-columns: 1fr; }
-  .proof__grid { grid-template-columns: 1fr 1fr; }
 }
