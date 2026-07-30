@@ -1,2 +1,6 @@
 .DS_Store
 /sample ads/
+# Source art for the hero portrait (multi-MB originals, exported to
+# assets/images/neil-hero.webp)
+IMG_*.jpg
+hero image.svg
