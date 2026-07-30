@@ -173,6 +173,17 @@
   });
 })();
 
+/* ---------- Stagger index ----------
+   .stagger.in > * uses calc(var(--i) * 55ms) for its reveal delay, but --i was
+   never assigned, so every child animated at once. Set it per child index. */
+(function staggerIndex() {
+  document.querySelectorAll('.stagger').forEach((box) => {
+    Array.prototype.forEach.call(box.children, (el, i) => {
+      el.style.setProperty('--i', String(i));
+    });
+  });
+})();
+
 /* ---------- Footer year ---------- */
 (function year() {
   const y = document.querySelector('[data-year]');
