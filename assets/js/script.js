@@ -203,13 +203,35 @@
     dotsWrap.appendChild(dot);
   });
   const dots = Array.from(dotsWrap.querySelectorAll('span'));
+
+  /* Prev/next arrows (desktop affordance; touch users swipe). Scrolling the
+     track is what moves the carousel, so the IntersectionObserver below keeps
+     the dots and the disabled states in sync either way. */
+  const prev = document.querySelector('[data-adshow-prev]');
+  const next = document.querySelector('[data-adshow-next]');
+  let current = 0;
+
+  const go = (i) => {
+    const target = slides[Math.max(0, Math.min(slides.length - 1, i))];
+    if (target) track.scrollTo({ left: target.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+  };
+  const syncButtons = () => {
+    if (prev) prev.disabled = current === 0;
+    if (next) next.disabled = current === slides.length - 1;
+  };
+
+  if (prev) prev.addEventListener('click', () => go(current - 1));
+  if (next) next.addEventListener('click', () => go(current + 1));
+  syncButtons();
+
   if (!('IntersectionObserver' in window)) return;
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      const i = slides.indexOf(entry.target);
-      dots.forEach((d, di) => d.classList.toggle('is-active', di === i));
+      current = slides.indexOf(entry.target);
+      dots.forEach((d, di) => d.classList.toggle('is-active', di === current));
+      syncButtons();
     });
   }, { root: track, threshold: 0.6 });
   slides.forEach((s) => io.observe(s));

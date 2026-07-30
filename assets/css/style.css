@@ -538,7 +538,22 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.03em; color: var(--text-secondary);
   padding: 10px 12px; border-top: 1px solid var(--line);
 }
-.adshow__dots { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+.adshow__nav { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 14px; }
+.adshow__btn {
+  width: 30px; height: 30px; flex: none;
+  display: grid; place-items: center;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--line); border-radius: 50%;
+  transition: border-color var(--tr), color var(--tr), opacity var(--tr);
+}
+.adshow__btn:hover { border-color: var(--accent); color: var(--accent); }
+.adshow__btn[disabled] { opacity: 0.35; cursor: default; }
+.adshow__btn[disabled]:hover { border-color: var(--line); color: var(--text-secondary); }
+/* Touch devices swipe, so the arrows are desktop-only affordances. */
+@media (hover: none) { .adshow__btn { display: none; } }
+
+.adshow__dots { display: flex; justify-content: center; gap: 8px; }
 .adshow__dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--line-strong); transition: background var(--tr); }
 .adshow__dots span.is-active { background: var(--accent); }
 
@@ -636,6 +651,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    ================================================================ */
 .contact { position: relative; overflow: hidden; }
 .contact__inner { position: relative; z-index: 1; }
+
+/* Portrait fills the empty right half of the closing CTA. It is decorative
+   here (the hero already introduces him), so it carries empty alt text and
+   is hidden from assistive tech. */
+.contact__media {
+  position: absolute; right: 0; bottom: 0; z-index: -1;
+  display: flex; align-items: flex-end;
+  pointer-events: none;
+}
+.contact__portrait {
+  width: min(38vw, 400px); height: auto;
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+}
+@media (max-width: 900px) {
+  .contact__media { display: none; }
+}
 .contact h2 {
   font-size: clamp(34px, 7vw, 84px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 500;
   color: var(--text-display); max-width: 16ch;

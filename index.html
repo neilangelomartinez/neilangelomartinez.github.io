@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- ?v= is bumped on each redesign stage so QA never sees a cached stylesheet -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=6" />
+  <link rel="stylesheet" href="./assets/css/style.css?v=7" />
 </head>
 
 <body>
@@ -128,13 +128,13 @@
         <article class="case reveal">
           <div class="case__head">
             <div>
-              <h3 class="case__title">HK eCommerce brand: scaling across markets</h3>
+              <h3 class="case__title">HK wellness brand: scaling across markets</h3>
               <p class="case__overview">Marketing VA · Remote Hong Kong · since Jan 2026</p>
             </div>
             <span class="case__badge">Localization · ABO · 14 markets</span>
           </div>
           <dl class="case__narrative">
-            <div class="cn-row"><dt>Challenge</dt><dd>Grow a Hong Kong eCommerce brand across many countries and beat a 1.70 ROAS target.</dd></div>
+            <div class="cn-row"><dt>Challenge</dt><dd>Grow a Hong Kong wellness brand across many countries and beat a 1.70 ROAS target.</dd></div>
             <div class="cn-row"><dt>Strategy</dt><dd>Treat every market as its own account rather than one global campaign with translated copy, so creative and landing page could match each region&rsquo;s angle.</dd></div>
             <div class="cn-row"><dt>Execution</dt><dd>Built and optimized the campaigns myself with an ABO focus, localized ads per market with Manus, and built matching landing pages. About 10 campaigns across 14 ad accounts.</dd></div>
           </dl>
@@ -158,13 +158,13 @@
         <article class="case reveal">
           <div class="case__head">
             <div>
-              <h3 class="case__title">US eCommerce brand: optimizing at scale</h3>
+              <h3 class="case__title">US tech company: optimizing at scale</h3>
               <p class="case__overview">Marketing VA · Remote US · since April 2024</p>
             </div>
             <span class="case__badge">Optimization · Daily reporting</span>
           </div>
           <dl class="case__narrative">
-            <div class="cn-row"><dt>Challenge</dt><dd>Keep a large US eCommerce account above a 0.60 ROAS target while it spends into the millions.</dd></div>
+            <div class="cn-row"><dt>Challenge</dt><dd>Keep a large US tech account above a 0.60 ROAS target while it spends into the millions.</dd></div>
             <div class="cn-row"><dt>Strategy</dt><dd>Work inside the account manager&rsquo;s guardrails and make daily reporting the early-warning system, so drift gets caught before it costs a week of budget.</dd></div>
             <div class="cn-row"><dt>Execution</dt><dd>Handle the Meta upload, daily reporting, and daily optimization. I run everything on the account except ad-set budget changes. At peak the account spent $500K&ndash;$1M a month and generated $3&ndash;5M in monthly revenue.</dd></div>
           </dl>
@@ -402,7 +402,15 @@
                 <figcaption>Gluta-C: intense whitening soap</figcaption>
               </figure>
             </div>
-            <div class="adshow__dots" data-adshow-dots></div>
+            <div class="adshow__nav">
+              <button class="adshow__btn" type="button" data-adshow-prev aria-label="Previous ad creative">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <div class="adshow__dots" data-adshow-dots></div>
+              <button class="adshow__btn" type="button" data-adshow-next aria-label="Next ad creative">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -521,7 +529,7 @@
             <div class="xp__when"><b>Jan 2026 to now</b>Remote Hong Kong</div>
             <div>
               <div class="xp__title"><svg class="xp__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L21 8H6"/></svg><h3 class="xp__role">Marketing VA</h3></div>
-              <p class="xp__co">HK eCommerce brand</p>
+              <p class="xp__co">HK wellness brand</p>
               <ul class="xp__pts">
                 <li>Set up my own campaigns with an ABO focus and optimize the whole account.</li>
                 <li>Localize ads for each market with Manus and build landing pages to match.</li>
@@ -534,7 +542,7 @@
             <div class="xp__when"><b>April 2024 to now</b>Remote · US</div>
             <div>
               <div class="xp__title"><svg class="xp__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L21 8H6"/></svg><h3 class="xp__role">Marketing VA</h3></div>
-              <p class="xp__co">US eCommerce brand</p>
+              <p class="xp__co">US tech company</p>
               <ul class="xp__pts">
                 <li>Handle Meta upload, daily reporting, and daily optimization within the manager's rules.</li>
                 <li>Run everything on the account except ad-set budget changes.</li>
@@ -662,6 +670,10 @@
     <!-- ============================ CONTACT ============================ -->
     <section class="section contact" id="contact">
       <div class="wrap contact__inner">
+        <div class="contact__media reveal" aria-hidden="true">
+          <img class="contact__portrait" src="./assets/images/neil-hero.webp"
+               alt="" width="660" height="796" loading="lazy" />
+        </div>
         <p class="eyebrow reveal">Contact</p>
         <h2 class="reveal">Let's make your ad spend <span class="accent">profitable.</span></h2>
         <p class="contact__sub reveal">
